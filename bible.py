@@ -139,10 +139,13 @@ total3=inscore=0
 while (inscore != -1):
     inscore= int(input('請輸入學生的成績'))
     scroe6.append(inscore)
-print(f"共有{len(scroe6)-1:5d}學生")
-for i in range (0,len(scroe6)-1):
+    
+scroe6.pop()
+
+print(f"共有{len(scroe6):5d}學生")
+for i in range (0,len(scroe6)):
     total3+=scroe6[i]
-average1=total3/len(scroe6)-1
+average1=total3/len(scroe6)
 print(f"本機的總成績{total3:2.2f}，平均成績{average1:2.2f}")
 # %%
 students=int(input("學生人數:"))#cp
@@ -169,10 +172,44 @@ print(tuple2)
 #tuple2=tuple(list1)
 #list2=list(tuple1)
 
+# %%
+dict1={'香蕉':20,'蘋果':50,'橘子':30}
+dict2=dict([['香蕉',21],['蘋果',51],['橘子',31],['橘子',4444]])
+print(dict1)
+print(dict2)
+print(dict1['蘋果'])
+print(dict2['橘子'])#只抓最後值  前面(鍵-值) 被覆蓋
+print(dict1.get('芒果'))
+print(dict1.get('芒果',100001))
+print(dict['芒果'])
+# %%
+dict3={'A':'內向','B':'外向','O':'和善','AB':'分裂者',\
 
+'a':'內向','b':'外向','o':'和善','ab':'分裂者'}
+aaa=input('請輸入血型(A,B,AB,O):')
+blood=dict3.get(aaa)
+if blood == None:
+    print('沒有「    '+  aaa +'」血型  ')
+else:
+    print('你的血型是「'+ aaa +'」型')
 # %%
 
 
+
+
+
+
+
+
+# %%
+
+# %%
+
+# %%
+
+# %%
+
+# %%
 
 # %%
 
