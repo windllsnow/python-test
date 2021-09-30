@@ -192,6 +192,91 @@ if blood == None:
     print('沒有「    '+  aaa +'」血型  ')
 else:
     print('你的血型是「'+ aaa +'」型')
+
+#%%
+
+
+dict2=dict([['香蕉',21],['蘋果',51],['橘子',31],['橘子',4444]])
+print(dict2)
+dict2["橘子"]=60
+print(dict2)
+dict2['鳳梨']=1111
+print(dict2)
+
+print('='*44)
+
+dict4={'香蕉':20,'蘋果':50,'橘子':30,'橘子':4444}
+del dict4['橘子']
+print(dict4)
+dict4.clear()
+print(dict4)
+del dict4
+print(dict4)
+#%%
+
+dict2=dict([['香蕉',21],['蘋果',51],['橘子',31],['橘子',4444]])
+
+item1=dict2.items()
+key1=dict2.keys()
+value1=dict2.values()
+nnn=dict2.setdefault('香蕉')
+print(item1)#鍵-值
+print(key1)#鍵
+print(value1)#值
+print(nnn)   #   與 get() 同
+print("香蕉" in dict2)
+print('lalala' in dict2)
+# %%
+dict5={'林小明':85,'曾山水':12,'鄭美麗':90}
+name2=input("輸入人名:")
+if name2 in dict5:
+    print(name2 +'的成績'+str(dict5[name2]))
+else:
+    score7=int(input('輸入學生分數:'))
+    dict5[name2]=score7
+    print("字典內容："  + str(dict5))
+
+# %%
+dict4={'香蕉':20,'蘋果':50,'橘子':30,'橘子':4444}
+key2=dict4.keys()
+print(key2)
+key2_2=list(dict4.keys())
+print(key2_2[0])
+
+print("="*40)
+
+value2=dict4.values()
+print(value2)
+value2_2=list(dict4.values())
+print(value2_2[0])
+
+print("-"*40)
+
+item2=dict4.items()
+print(item2)
+item2_2=list(dict4.items())
+print(item2_2[1])      #2nd 鍵-值
+print(item2_2[1][0])   #2nd 鍵
+print(item2_2[1][1])   #2nd 值
+
+for name00, num00 in item2_2:
+    print(f"得到的 {name00:4s} 數目為 {num00:4d}面")
+
+
+# %%
+dict6={'香蕉':20,'蘋果':50,'橘子':30,'西瓜':404}
+n01=dict6.setdefault('蘋果')         #有的
+n02=dict6.setdefault('蘋果',100)    # 有的 不給改
+n03=dict6.setdefault('冬瓜')        #沒有的  none
+n04=dict6.setdefault('冬瓜1',41)    #沒有的  改哦!!
+
+print(n01)
+print(n02)
+print(n03)
+print(n04)
+print(dict6)
+
+
 # %%
 
 
@@ -200,12 +285,6 @@ else:
 
 
 
-
-# %%
-
-# %%
-
-# %%
 
 # %%
 
