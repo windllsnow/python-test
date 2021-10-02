@@ -1,4 +1,8 @@
 #%%
+from typing import FrozenSet
+from typing_extensions import runtime
+
+
 name='林小明'
 score=80
 name1='David'
@@ -278,23 +282,158 @@ print(dict6)
 
 
 # %%
+fruits={'banana','apple','orange','banana'} # 重覆的話 只有一個
+print(fruits)
+print(type(fruits))
+
+fruits01={'香蕉','banana',100,(1,2)}
+print(fruits01)
+
+fruits02={[1,2],{14:11},{1,2}} #list dict  set 不可以放集合裡
+print(fruits02)
+#%%
+fruits03=set(['香蕉','apple','kelt',1223])
+print(fruits03)
+print(type(fruits03))
+
+print('='*10)
+
+s01=set('Goof Boy !')
+print(s01)                  # 會拆掉
+print(type(s01))
 
 
+print('='*10)
 
-
-
-
+s1={}
+print(type(s1))
+s2=set()
+print(type(s2))
+# %%
+person01=['林小明','王常歐','縮縮鬥','隔壁老王','lala','你說呢','曾美麗','林小明']
+s001=set(person01)
+print(s001)
+list2=list(s001)  # 轉list
+print(list2)
+print(list2[0])  # 轉list 才能讀 特定位置
 
 
 # %%
+'''
+&交集
+|聯集
+-差集
+^對稱差集
+== 等於
+!=不等於
+in  是成員
+not in 不長成員
+
+'''
+A={1,2,3,4,5,6,7}
+B={9,8,7,6,5,4,3}
+print(A&B)
+print(A|B)
+print(A-B)
+print(A^B)
+print(A==B)
+print(A!=B)
+print(2 in B)
+print(2 not in B)
+
+print('_'*50)
+
+
+A.add('C')
+# A.clear() 刪完成 空集合
+# A.copy()
+# A.pop()  隨機刪 ，刪 空集合 會 error
+
+A.update(B)  #把 B 加入A
+print(A)
+print(B)  # 不變
+
+print('_'*50)
+
+A.discard(2)
+print(A)
+A.discard(99) # 不會跳 error
+print(A)
+A.remove(99)  # error
+print(A)
+# %%
+'''
+max(A)
+min(A)
+sum(A) #數字 才能
+len(A) # 元素個數
+'''
+AA={1,5,7,3,9,7,3,9,3,3,9,55,66,77,88,99,1234,443,453179,100}
+S_AA=sorted(AA)
+S01_AA=sorted(AA,reverse=True)
+
+
+print(len(AA))  #重覆的  算一個
+print(AA)
+print(S_AA)
+print(S01_AA)
 
 # %%
+# 集合不可以 for迴 圈i
+langs={'python','java','kotlin'}
+enum_langs=enumerate(langs) # 轉成enumerate 物件
+print(list(enum_langs))
 
-# %%
 
-# %%
+print("="*45)
+
+for item in enumerate(langs):  # 只能是【enumerate(langs)】 不懂??????????????
+    print(item)
+for i,item in enumerate(langs):
+    print(i,item) 
+
+
+
 
 #%%
+#set  可變集合  frozenset 不可變集合  不能用add() clear() discard() pop() remove() update()
+AAA=frozenset([1,2,3,4])
+BBB=frozenset([4,5,6,7])
+
+print(AAA&BBB)
+print(AAA|BBB)
+print(AAA-BBB)
+print(AAA^BBB)
+print(sum(AAA))
+print(max(AAA))
+# %%
+c00=float(input('請輸圓半徑:'))
+def Circle(radius):
+    area= radius*radius*3.14
+    length= 2*radius*3.14
+    return area,length
+c1=Circle(c00)
+print(f'圓面績:{c1[0]:6.2f} ，圓周長{c1[1]:6.2f}')
+
+# %%
+#參數預設值
+def getarea(width, height=12):
+    return width*height
+ret1= getarea(6)
+ret2=getarea(6,22)
+print(ret1)
+print(ret2)
+# %%
 
 
 
+
+
+
+# %%
+
+# %%
+
+# %%
+
+# %%
