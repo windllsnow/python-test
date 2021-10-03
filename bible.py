@@ -424,7 +424,27 @@ ret2=getarea(6,22)
 print(ret1)
 print(ret2)
 # %%
+def scope():
+    var1=1
+    print(var1,var2)# 只有此函式裡 var11=1
+  
 
+var1 =10
+var2= 20
+
+scope()
+print(var1,var2)
+
+def scope1():
+    global var11   # 整個python 專案 var11都=1
+    var11=1
+    var22=2
+    print(var11,var22)
+
+var11=10
+var22=20
+scope1()
+print(var11,var22)
 
 
 
