@@ -3,6 +3,8 @@
 #----------DAY1----------
 
 #%%
+print('='*20+'第'+'頁總共有'+'筆資料'+'='*10) #黏在一起
+print('='*20,'第','頁總共有','筆資料','='*10) #，等於 空格
 
 print(len('95637+12444'))   #'  ' 字元長度(個數)
 #%%
@@ -76,23 +78,6 @@ print(f"You'll have {days:1d} days,{weeks:1d} weeks and {months:1d} months left"
 
 
 #%%
-
-
-
-
-
-#%%
-
-
-
-
-
-
-
-
-
-
-#%%
 poi=int(input("ANy number which you like:"))
 
 sumq=0
@@ -118,9 +103,6 @@ def each_unit_sum(number):
 print(each_unit_sum(1234))
 
 
-
-
-
 # %%
 
 s1=int(input("Begining?(yes=1,no=0)"))
@@ -141,6 +123,169 @@ while s2!=False:
 
 
 # %%
+
+#------------DAY3-----------------
+
+#%%
+
+xx=int(input('Which number you want to check? (Integer) '))
+if xx==0:
+    print(f'your number is {xx} , is not even and odd number')
+elif xx%2==0:
+    print("your number is even number")
+else:
+    print('your number is odd  number ')
+
+
+# %%
+#____________門票_____________
+print("Welcome to the rollercoaster!\m ")
+heighter=int(input('What is your height in cm? ' ))
+bill=0
+
+if heighter >=120:
+    print(' You can ride the rollercoaster! \n ')
+    age=int(input("What is your age? "))
+    if age>=45 and age<=55:
+        print("Everything is going to be ok. Have a free ride on us!")
+    elif age >= 18:
+        bill+=12
+        print("adult tickets $12 once")
+    elif age >= 12:
+        bill+=7
+        print("Youth tickets $7 once")
+    else:
+        bill+=5
+        print("Child tickets $5 once")
+
+    wants_photos=input("Do you want a photo taken ? Y or  N. ")
+    if wants_photos == "Y" or wants_photos=="y":
+        bill += 3
+    print(f'you bill is {bill} dollars')
+else:
+    print("Sorry,you have to grow taller before you can ride")
+
+
+# %%
+#____________閏年_______________*****__________難__
+
+zzz=int(input("This  year is ?  "))
+if zzz % 4 ==0:
+    if zzz % 100 ==0:
+        if zzz % 400==0:
+            print(f"This year {zzz} is Leap year")
+        else:
+            print(f"This  year {zzz} is not Leap year")   
+    else:
+        print(f"This  year {zzz} is  Leap year")   
+else:
+    print(f"This  year {zzz} is not Leap year")    
+    
+# %%
+print("Welcome to Python Pizza Deliveries! ")
+size=input("What siz pizza do you want? S  ,M ,or  L")
+add_peperoni=input("Do you want pepperoni? Y or N")
+extra_cheese=input("Do you want extra cheese? Y or N ")
+bill=0
+if size =="S":
+    bill+=15
+    if add_peperoni=="Y":
+        bill+=2
+        if extra_cheese=="Y":
+            bill+=1
+            print(f"Your final bills is ${bill}")
+        else:
+            print(f"Your final bills is ${bill}")
+    else:
+        print(f"Your final bills is ${bill}")
+elif size =="M":
+    bill+=20
+    if add_peperoni=="Y":
+        bill+=3
+        if extra_cheese=="Y":
+            bill+=1
+            print(f"Your final bills is ${bill}")
+        else:
+            print(f"Your final bills is ${bill}")
+    else:
+        print(f"Your final bills is ${bill}")
+else:
+    bill+=25
+    if add_peperoni=="Y":
+        bill+=3
+        if extra_cheese=="Y":
+            bill+=1
+            print(f"Your final bills is ${bill}")
+        else:
+            print(f"Your final bills is ${bill}")
+    else:
+        print(f"Your final bills is ${bill}")
+#s 15  2 1
+#m 20  3 1
+#l 25  3 1
+
+#%%
+print("Welcome to Python Pizza Deliveries! ")
+size=input("What siz pizza do you want? S  ,M ,or  L")
+add_peperoni=input("Do you want pepperoni? Y or N")
+extra_cheese=input("Do you want extra cheese? Y or N ")
+bill=0
+if size =="S":
+    bill+=15
+elif size=="M":
+    bill+=20
+else:
+    bill+=25
+if add_peperoni =="Y":
+    if size=="S":
+        bill+=2
+    else:
+        bill+=3
+if extra_cheese=="Y":
+    bill+=1
+print(f"Your final bill is ${bill}")
+
+
+# %%
+#________________LOVE　Caculator_____________________________
+
+print("Welcome to the Love Calculator! ")
+name1=input("What is  your name?\n")
+name2=input("What is  their name? \n")
+n1_01=name1.lower()
+n2_01=name2.lower()
+n3=n1_01+n2_01
+
+
+n31=n3.count("t")+n3.count("r") +n3.count("u")+ n3.count("e")  # int
+n32=n3.count("l")+n3.count("o") +n3.count("v")+ n3.count("e")  # int
+
+n333=str(n31)+str(n32)   # str
+
+n33=int(n333)   #int
+
+
+
+if n33 >90 or n33<10:
+    print(f"Yours' Love score is {n33},you go together like coke and mentos")
+elif n33>=40 and n33<=50:
+    print(f"Yours' Love score is {n33},you are alright together")
+else:
+    print(f"Yours' Love score is {n33}")
+
+# you are alright together ( 40-50
+# you go together like coke and mentos  ( <10 or >90
+
+
+# %%
+#____________________Day4________________________
+
+# %%
+
+
+
+# %%
+
 
 
 
