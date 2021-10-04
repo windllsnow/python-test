@@ -447,13 +447,106 @@ scope1()
 print(var11,var22)
 
 
+# %%
+
+#_______________數值函數____________________________
+z1=abs(-5)       # 絕對值
+z2=chr(65)       #取 x的字元
+z3=divmod(44,6)  #x/y =(商,餘數)
+z4=hex(34)       #  x 轉 16 進位
+z5=oct(34)       #  x 轉 8 進位
+z6=ord("我")     #  x  的 unicode 值
+z7=pow(2,3)      #  (x,y)  等於 x**y
+z8=round(45.8)   # 四捨六入
+z9=sorted([3,1,7,5]) #由小到大
+print(z1)
+print(z2)
+print(z3)
+print(z4)
+print(z5)
+print(z6)
+print(z7)
+print(z8)
+print(z9)
+
+print("="*10)
+
+yy1=pow(2,3,7)
+print(yy1)   #2**3/7 =8/7  餘數為1
+
+
+print('='*10)
+
+ret1=divmod(44,6)
+print(ret1[0],ret1[1])    
+print(type(ret1))  # tuple
+print(ret1)
+
+
+print('='*10)
+
+rr1=round(2.4)
+rr2=round(2.6)
+rr3=round(3.5)
+rr4=round(4.5)
+rr5=round(3.75,1)
+rr6=round(4.786868,3)
+print(rr1,rr2,rr3,rr4,rr5,rr6)
+
+
+print('='*10)
+#%%
+
+person001=int(input("請輸入學生人數: "))
+apple=int(input("請輸入蘋果總數:  "))
+ret01=divmod(apple,person001)
+print("每個學生可分得蘋果", str(ret01[0]),'個')
+print('蘋果剩餘',str(ret01[1]),'個')
+
+#%%
+
+print(max(1,2,3,4))
+print(max([1,2,3,4]))
+print(sum([1,2,3,4]))
+print(sum([1,2,3,4],10))
+print(sorted([3,1,7,8])) #預設  false  由小到大排序
+print(sorted([3,1,7,8],reverse=True))
+
+
+#%%
+innum=0
+list3=[]
+while (innum!= -1):
+    innum=int(input("請輸入電費:  "))
+    list3.append(innum)
+print(list3)
+list3.pop()     # list.pop() 刪預設值 ;dict.pop(key, def) 如dict.pop('a':123) or dict.pop('a')
+print(f"共輸入{len(list3):5d},最多電費{max(list3):5d},最少電費{min(list3):5d},總電費{sum(list3):5d}")
+print(f"電費由大到小排序為:{sorted(list3,reverse=True)} ")
+
+
+# %%
+
+#_______________字串函數____________________________
+z10=
+z11=
+z12=
+z13=
+z14=
+z15=
+z16=
+z17=
+z18=
+z19=
+z20=
 
 
 
 # %%
 
-# %%
+
 
 # %%
 
-# %%
+
+
