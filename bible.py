@@ -528,17 +528,200 @@ print(f"電費由大到小排序為:{sorted(list3,reverse=True)} ")
 # %%
 
 #_______________字串函數____________________________
-z10=
-z11=
-z12=
-z13=
-z14=
-z15=
-z16=
-z17=
-z18=
-z19=
-z20=
+#擴充字元 要大於 原本長度 ，只能有一個字元，預設一個空白字元
+z10='book'.center(8)       #(  book  )  擴充8字元 置中
+z11="book".ljust(8)        #(book    )  擴充8字元 置左                         
+z12="book".rjust(8)        #(    book)  擴充8字元 置右
+z27='book'.center(10,"$")
+
+#文字中間不會移除
+z13=" book ".lstrip()      #(book ) 移除左邊空格
+z14=" book ".rstrip()      #( book) 移除右邊空格
+z15=" book ".strip()       #(book)移除左右邊空格
+z28='  This  is a book  '.strip()
+
+z16='abc'.startswith("a")  #True
+z17='abc'.endswith('c')    #True
+
+z18='#'.join(['ab','cd'])  #ab#cd
+z19="ab#cd".split("#")     #['ab','cd'] 預設1個空白字元
+
+z20='Yes'.islower()        #False
+z21='YES'.isupper()        #True
+
+z22='book'.find('k')       #3 , 不存在的話 回傳-1
+z29='book'.find('a')
+
+z23=len('book')            #4
+z24="Yes".upper()          #YES
+z25="YEs".lower()          #yes
+
+z26="book".replace('o','a')#baak
+
+str011="I love python."
+print(str011.replace('o','@'))
+print(str011.replace('o','@',1))
+print(str011.replace('python','django'))
+print("="*60)
+
+print(z10)
+print(z11)
+print(z12)
+print(z27)
+
+print(z13)
+print(z14)
+print(z15)
+print(z28)
+
+print(z16)
+print(z17)
+print(z18)
+print(z19)
+print(z20)
+print(z21)
+
+print(z22)
+print(z29)
+
+print(z23)
+print(z24)
+print(z25)
+print(z26)
+
+# %%
+listname=['林小明','陳阿中','張小英']
+listchinese=[100,72,90]
+listmath=[87,88,65]
+listenglish=[79,100,9]
+print("姓名   座號   國文   數學   英文")
+for i  in range(0,3):
+    print(listname[i].ljust(5),str(i+1).rjust(3),\
+    str(listchinese[i]).rjust(5),str(listmath[i]).rjust(5),\
+    str(listenglish[i]).rjust(5))
+
+
+
+# %%
+
+date1='2017-8-23'
+date1=" 西元 "+date1
+date1=date1.replace("-"," 年 ", 1)
+date1=date1.replace('-'," 月 ", 1)
+date1+=" 日 "
+print(date1)
+
+# %%
+import random as r
+str1="abcdefg"
+list001=[1,23,54,1,'ab','cd','ef']
+print(r.choice(str1))# 由字串中隨機一個字元
+print(r.sample(str1,3))#由字串中隨機n個字元
+
+
+print(r.randint(1,10))# 由n1到n2 隨機一個 整數
+print(r.uniform(1,10))# 由n1到n2 隨機一個 浮點數
+
+print(r.randrange(0,18,2))# 由n1到n2 每隔 n3 隨機一個 整數
+
+
+print(r.random())     # 由0到1 隨機一個 浮點數
+
+
+r.shuffle(list001) #串列洗牌
+print(list001)
+
+
+# %%
+import random as r
+
+while True:
+    inkey=input('按任意鍵再按[Enter]鍵擲骰子，直接按[Enter]鍵結束: ')
+    if len(inkey)>0:
+        num123=r.randint(1,6)
+        print("你擲的骰子點數: "+str(num123))
+    else:
+        print("遊戲結束! ")
+        break
+
+
+# %%
+
+import random as r
+list002=r.sample(range(1,50),7)
+special=list002.pop()
+list002.sort()
+print("本期大樂透的中獎號碼為：",end="")
+
+# 這迴圈重點是  ","
+for i in range(0,6):
+    if i ==5:
+        print(str(list002[i]))
+    else:
+        print(str(list002[i]),end=' , ')
+print("本期大樂透特別號為："+ str(special))
+
+print(list002)
+# %%
+
+import time 
+print(time.sleep(2))
+print(time.time())           #目前時間數值
+print(time.localtime())      # 時間元組<=(目前時間數值)
+print(time.localtime(time.time()))
+
+print("="*20)
+
+time1=time.localtime(time.time())
+print(time1.tm_year)
+print(time1[0])
+
+print("="*20)
+
+print(time.ctime())       #時間字串<=(目前時間數值)
+print(time.ctime(time.time()))
+
+
+
+'''
+0  tm_year  西元年
+1  tm_mon   月  1-12
+2  tm_mday  日  1-31
+3  tm_hour  小時 0-23
+4  tm_min   分   0-59
+5  tm_sec   秒   0-60
+6  tm_wday  星期機 -->0-6<--   (一~日)
+7  tm_yday  一年的第幾天 1-366  
+8  tm_isdst 時光節約時間 -->1/0<--  (有/無)
+'''
+
+# %%
+import  time 
+start=(time.time())
+print(f"開始時間：{start} ")
+for i in range(500):     #執行500次 每次間隔0.0001s
+    time.sleep(0.001)
+end=(time.time())
+print(f"結束時間： {end}")
+print(f"使用時間：{end-start:7.3f}")
+
+
+
+# %%
+
+import time as  t
+week=['一','二','三','四','五','六','日']
+dst=['有日光節約時間','無日光節約時間']
+time2=t.localtime()
+show="現在時間：中華民國"+str(int(time2.tm_year)-1911)+"年"+str(int(time2.tm_mon))+"月"\
+    +str(int(time2.tm_mday))+"日"+str(int(time2.tm_hour))+"點"+str(int(time2.tm_min))+"分"\
+    +str(int(time2.tm_sec))+"秒 星期"+week[time2.tm_wday]+"\n"\
+    "今天是今年的第"+str(int(time2.tm_yday))+"天 ，此地"+dst[time2.tm_isdst]
+
+
+
+print(show)
+
 
 
 
@@ -547,6 +730,12 @@ z20=
 
 
 # %%
+
+
+
+# %%
+
+
 
 
 
