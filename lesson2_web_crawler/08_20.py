@@ -1,0 +1,71 @@
+#%%
+# coding:utf-8
+import scrapy
+class letter789(scrapy.Spider):     #  wiskyscraper  檔名(自己取的)
+    name='wisky'
+    start_urls=['https://www.whiskyshop.com/scotch-whisky?item_availability=In+Stock']
+
+    def parse(self,response): 
+        for products in response.css('div.product-item-info'):          #  div.product-item-info   整個物件欄位   
+            try:
+                yield{                                                      # 產生資料  字典格式
+                    'name':products.css('a.product-item-link::text').get(),  #  a.product-item-link::text  標題
+                    'price':products.css('span.price::text').get().replace('£','')  
+                     }
+            except:
+                yield{
+
+                    'name':products.css('a.product-item-link::text').get(),  #  a.product-item-link::text  標題
+                    'price':'sold  out'  
+                    }
+        next_page=response.css('a.action.next').attrib['href'] # a.action next 不能有空格
+        if next_page is not None:
+            yield response.follow(next_page,callback=self.parse)
+# %%
+# 紀錄一下指令  ---在Anaconda prompt)
+'''
+
+
+C:\Users\jason>scrapy startproject  letter789 _______-> 在jason 目錄下 建一個letter789(檔名一定要 英+數)    
+C:\Users\jason\letter789> conda install -c conda-forge scrapy    _______->在該目錄下 建構  scrapy 環境
+
+
+上面程式碼 存C:\Users\jason\letter789\letter789\spiders   重點是  檔案放 spiders 
+
+C:\Users\jason\letter789>    scrapy crawl wisky _______-> class 類別裡  name='wisky' 所以這樣key 
+
+
+輸出 程式碼  結果'item_scraped_count':100   #這樣就 OK
+ 
+
+ #Obey robots.txt rules
+ ROBOTSTXT_OBEY =False     #違反機器人協定
+(解決上述，用IDLE(python的) 開啟 settings.py  改成 True)
+
+
+C:\Users\jason\letter789>  scrapy crawl wisky
+
+C:\Users\jason\letter789>   scrapy crawl wisky -o  wisky.json   # 存json  可用 記事本開
+C:\Users\jason\letter789>  scrapy crawl wisky -o  wisky.csv    # 存csv
+
+# 該程式碼  不能放註解  不懂  幹!!
+
+'''
+
+
+# %%
+
+print("---------------"*4)
+
+#%%
+
+
+
+
+
+
+# %%
+
+
+
+

@@ -157,7 +157,7 @@ response.css('div.r-ent > div.title > a::text').extract()
 
 
 1 打開Anaconda Prompt
-2 cd 進入 Anaconda3\envs\scrapyws
+2 cd 進入 Anaconda3\envs\scrapyws  # 沒有的話 建一個scrapyws
 3 conda install protego
 
 
@@ -201,11 +201,13 @@ class wiskyscraper(scrapy.Spider):     #  wiskyscraper  檔名(自己取的)
 
 # %%
 
-# 紀錄一下指令
+# 紀錄一下指令 
+ # 紀錄一下指令  ---在Anaconda prompt
 '''
 上面程式碼 存   C:\Users\jason\wiskyscraper\wiskyscraper\spiders
 
 C:\Users\jason>                  cd wiskyscraper
+C:\Users\jason\wiskyscraper>     
 
 C:\Users\jason\wiskyscraper>    scrapy crawl wisky
 
