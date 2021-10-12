@@ -185,7 +185,7 @@ print(dict1['蘋果'])
 print(dict2['橘子'])#只抓最後值  前面(鍵-值) 被覆蓋
 print(dict1.get('芒果'))
 print(dict1.get('芒果',100001))
-print(dict['芒果'])
+
 # %%
 dict3={'A':'內向','B':'外向','O':'和善','AB':'分裂者',\
 
@@ -726,6 +726,101 @@ print(show)
 
 
 # %%
+#__________________________________________物件導向__________________
+# __建立類別______-
+class Animal():
+    name3="小鳥"
+    def sing(self):
+        print("很會唱歌")
+
+bird=Animal()
+print(bird.name3)
+bird.sing()
+
+
+# %%
+
+class Animal1():                    #類別
+    def __init__(self,name):        # 
+        self.name=name              #屬性                . 屬性        
+    def sing(self):                 #方法                   .方法()
+        print(self.name +",很會唱歌！")
+bird =Animal1("鸚鵡")               # 以Animal1 類別，建立一個名叫鸚鵡的bird 物件
+print(bird.name)
+bird.sing()
+
+
+
+# %%
+class Animal2():                   
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def sing(self):
+        print(self.name + str(self.age) + "歲，很會唱歌！")
+    def grow (self,year):
+        self.age+=year
+
+
+bird1=Animal2("鸚鵡",1)  #1歲
+bird1.grow(2)   # 長大2歲
+bird1.sing()   #1+2歲
+
+
+# %%
+#_________________類別封裝_______________________________
+
+class Animal3():
+    def __init__(self,name,age):
+        self.__name=name   # 僅 類別 內 可用  ， 私用， 叫 封裝
+        self.__age=age
+    def __sing(self):
+        print(self.__name+ str(self.__age),end= "歲，很會唱歌，")
+    def talk(self):
+        self.__sing()
+        print('也會模仿人類說話！')
+
+bird2=Animal3("灰鸚鵡",2)
+bird2.talk()
+
+bird2__age=-1     # 封裝 屬性 、方法 ， 不能改
+bird2.talk()
+#bird.__sing()
+
+
+# %%
+#_________________類別繼承_____________________________
+
+class Animal4():
+    def __init__(self,name):
+        self.name=name          # 定義 共屬性
+    def fly(self):              # 定義 共方法
+        print(self.name+'很會飛')
+
+class Bird(Animal4):
+    def __init__(self, name):
+        self.name = '粉紅色' + name   # 覆寫 父 類別的建構式
+    def sing(self):
+        print(self.name + ' 也愛唱歌')
+
+pigeon=Animal4("小白鴿")
+pigeon.fly()
+
+parrot=Bird('小鸚鵡')
+parrot.fly()
+parrot.sing()
+
+
+# %%
+#  super()   單繼承  ok ；多繼承  麻煩
+
+
+
+
+
+# %%
+#________________________多型_______________________________
+
 
 
 
@@ -733,9 +828,24 @@ print(show)
 
 
 
+
+
+
+# %%
+#______________________多重繼承________________________________
+
+
+
+
+
 # %%
 
+# %%
 
+# %%
 
+# %%
 
+# %%
 
+# %%
