@@ -3,10 +3,57 @@
 #----------DAY1----------
 
 #%%
+
+#集合的 pop()
+
 print('='*20+'第'+'頁總共有'+'筆資料'+'='*10) #黏在一起
 print('='*20,'第','頁總共有','筆資料','='*10) #，等於 空格
 
 print(len('95637+12444'))   #'  ' 字元長度(個數)
+#%%
+
+
+#list.pop() 函数用于移除列表中的一个元素（默认最后一个元素），并且返回该元素的值。
+list1 = ['Google', 'Runoob', 'Taobao']
+list_pop=list1.pop(1)
+print(f"删除的项为 :{list_pop}")
+print(f"列表现在为 : {list1}")
+
+print("_"*58)
+
+#字典的 pop()
+site= {'name': '菜鸟教程', 'alexa': 10000, 'url': 'www.runoob.com'}
+pop__obj=site.pop('name')
+print(pop__obj)   
+print(site)
+
+print("_"*58)
+
+#集合的 pop()
+# 执行下面的代码,并查看输出结果:
+print('pop()函数的输出结果 看这里:')
+s1={4,2,1,5} # 集合里只有数字
+s2={'你','我','他'} # 集合里无数字
+s3={3,2,4,'你','X'} # 集合里既有数字又有非数字
+s1.pop() # 元素是数字时, 删除最小的数字, 其余数字升序排列
+s2.pop() # 元素非数字时, 随机删除一个元素, 其余元素随机排序
+s3.pop() # 元素既有数字又含非数字时, 如果删除的是数字, 则一定删最小的, 否则随机删除一个非数字元素
+print(s1)
+print(s2)
+print(s3) # 这个代码执行后, 输出的结果是随机的
+'''
+总结: 
+
+1、如果集合的元素都是数字, 删除时, 删掉的是最小的数字, 其余数字升序排列
+
+2、如果集合的元素是非数字, 删除时, 删掉的是随机的元素, 其余元素随机排列
+
+3、如果集合里既有数字又有非数字元素, 删除时:
+
+若删掉的是数字, 则一定是删掉了最小的, 其他数字升序排列, 非数字元素随机排列;
+若删掉的非数字, 则一定是随机删掉了一个, 其他数字升序排列, 非数字则随机排列.
+
+'''
 #%%
 
 numbers=[100,10,21,35,40,50]
@@ -284,6 +331,332 @@ else:
 
 
 
+from os import name
+import random
+
+
+
+random_integer=random.randint(0,1)
+print(random_integer)
+
+#0.000000~0.99999999...
+random_float=random.random()
+print(random_float)
+
+#0.000000~4.99999999...
+random_float1=random_float*5
+print(random_float1)
+
+love_score1=random.randint(1,100)
+print(f"Your love score is {love_score1}")
+
+# %%
+
+import random
+pp1=random.randint(0,1)
+p=int(input("Please key any integer to move on! Exit please key  -1 "))
+while p!=-1:
+    if pp1==p:
+        print('Heads')
+        break
+    else:
+        print("Tails")
+        break
+print("\n Game finished")
+# %%
+# list
+
+names_string=input("Give me  everyone's names , seperated by a comma.")
+names1=names_string.split(",") #預設一格 空格
+
+kkk001=random.choice(names1)
+print(f" {kkk001} is your turn to buy lunch !  XDD")
+#________________上下一樣結果__________
+num_item1=len(names1)
+num_cc=random.randint(0,num_item1-1)
+print(f" {num_cc} is your turn to buy lunch !  XDD")
+
+
+# %%
+# 藏寶圖
+#題目  先 欄 後 列
+
+row1=[" "," "," "]
+row2=[" "," "," "]
+row3=[" "," "," "]
+
+map=[row1,row2,row3]
+
+print(f"{row1}\n{row2}\n{row3}")
+
+position=input("Where do you want to put the treasure?")
+
+pp22=str(position)
+x001=pp22[1]
+y001=pp22[0]
+x0001=int(x001)
+y0001=int(y001)
+map[x0001-1][y0001-1]="x"
+print("____"*10)
+
+
+
+print(f"{row1}\n{row2}\n{row3}")
+# %%
+
+# 剪刀 石頭 布
+#_________________超難______________________-------
+
+
+import random as rad
+
+rrr=int(input("What do you want to choice? Type 0 for Rock , 1 for Paper,2 for Scissors"))
+r1=["石頭","布","剪刀"]  #給人
+r2=["石頭","布","剪刀"]  #給 機器
+
+r2_choice=rad.randint(0,len(r2)-1)  # 數字  注意 len()-1
+try:
+    print(f"你出的是{r1[rrr]}")
+    print(f"機器出的是{r2[r2_choice]}")
+
+    while rrr==r2_choice:
+        print("woops!,Please 重輸!")
+        rrr=int(input("What do you want to choice? Type 0 for Rock , 1 for Paper,2 for Scissors"))
+        print(f"你出的是{r1[rrr]}")
+        print(f"機器出的是{r2[r2_choice]}")
+    if rrr>r2_choice:
+        if r2_choice==0 and rrr==2:
+            print("you lose")
+        else:
+            print("you win")
+    else:
+        if rrr==0 and r2_choice==2:
+            print("you win")
+        else:
+            print("you lose")
+except:
+    print("oops GG ,game over ,because you key number not 0,1 or 2")
+
+
+# %%
+
+
+
+#_______________day5__________________
+
+
+
+
+
+
+# %%
+
+
+fruits=["Apple","Peach","Pear"]
+for fruit in fruits:
+    print(fruit)
+    print(fruit+"Pie")
+print(fruits)
+
+
+# %%
+student_heights=input("Input a list of student heights").split()
+
+for n in range(0,len(student_heights)):
+    student_heights[n]=int(student_heights[n])
+print(student_heights)
+    
+# don't use  sum()、len
+
+total_height=0
+for height in student_heights:
+    total_height+=height
+print(total_height)
+
+number_of_students=0
+for student in student_heights:
+    number_of_students+=1
+print(number_of_students)
+
+
+print(f"平均身高{total_height/number_of_students:4.4f} cm")
+
+
+# %%
+
+#_______________想一下_______________________
+student_score=input("Input a list of student score").split()
+
+for n in range(0,len(student_score)):
+    student_score[n]=int(student_score[n])
+print(student_score)
+highest_score=0
+for score in student_score:
+    if score > highest_score:  #如[100,200,300];100>0; highest=100   =>     200>100;  highest=200...
+        highest_score=score
+print(f"The highest score in the class is :{highest_score}")
+
+# %%
+sum1=0
+n=0
+for n in range(1,101,2):
+    n+=1      # 1+1 3+1 .....
+    sum1=sum1+n
+print(sum1)
+
+
+
+sum2=0
+for n in range(2,101,2):  #2 4 ....
+    sum2+=n    
+print(sum2)
+
+
+sum3=0
+for n in range(1,101):
+    if n % 2 ==0:
+        sum3+=n
+print(sum3)
+
+
+# %%
+
+for n in range (1,101):
+    if n % 3==0 and n % 5==0:
+        print("FizzBuzz")
+    elif n % 3==0 or n % 5==0:
+        if n % 3==0:
+            print("Fizz")
+        else:
+            print("Buzz")
+    else:
+        print(n)
+
+
+# %%
+
+#__________________password____超難!!______________________
+import random as  r
+letterss=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',\
+    'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+numberss=['0','1','2','3','4','5','6','7','8','9']
+symbols=['!','#','$','%','&','(',')','*','+']
+
+print("Welcome to the pypassword Generator!")
+nr_letters=int(input("How many letters would you like in your password?\n"))
+nr_symbols=int(input("How many symbols would you like? \n"))
+nr_numberss=int(input("How many numbers would you like? \n"))
+
+
+
+num00=nr_letters+nr_symbols+nr_numberss # 確認 密碼 位數
+print(num00)
+
+l2=r.sample(letterss,nr_letters) 
+s2=r.sample(symbols,nr_symbols)   #由 x字串中隨機n個字元   (type: list)
+n2=r.sample(numberss,nr_numberss)
+
+
+fin2=l2+s2+n2       # list 相加
+
+print(fin2)
+
+kk=r.sample(fin2,6)  # 取6個 取後不放回
+print(kk)
+StrQ="".join(kk)      # list 轉 str
+print(f"你的新密碼: \t {StrQ} \t")
+
+# %%
+#__________________password____超難!!______________________
+import random as  r
+letterss=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',\
+    'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+numberss=['0','1','2','3','4','5','6','7','8','9']
+symbols=['!','#','$','%','&','(',')','*','+']
+
+print("Welcome to the pypassword Generator!")
+nr_letters=int(input("How many letters would you like in your password?\n"))
+nr_symbols=int(input("How many symbols would you like? \n"))
+nr_numberss=int(input("How many numbers would you like? \n"))
+
+# _________________________________________________easy__________________________________
+password=""
+for char in range(1,nr_letters+1):
+    password+=random.choice(letterss)
+for char in range(1,nr_symbols+1):
+    password+=random.choice(symbols)
+for char in range(1,nr_numberss+1):
+    password+=random.choice(numberss)
+print(password)
+
+
+
+
+
+
+
+# %%
+
+# %%
+#__________________password____超難!!______________________
+import random as  r
+letterss=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',\
+    'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+numberss=['0','1','2','3','4','5','6','7','8','9']
+symbols=['!','#','$','%','&','(',')','*','+']
+
+print("Welcome to the pypassword Generator!")
+nr_letters=int(input("How many letters would you like in your password?\n"))
+nr_symbols=int(input("How many symbols would you like? \n"))
+nr_numberss=int(input("How many numbers would you like? \n"))
+
+
+
+# _________________________________________________HARD__________________________________
+
+password_list1=[]
+for char in range(1,nr_letters+1):
+    password_list1+=random.choice(letterss)
+for char in range(1,nr_symbols+1):
+    password_list1+=random.choice(symbols)
+for char in range(1,nr_numberss+1):
+    password_list1+=random.choice(numberss)
+print(password_list1)
+
+r.shuffle(password_list1)
+print(password_list1)
+password1=""
+for char in password_list1:
+    password1+=char
+print(f"Your password  is {password1}")
+
+#%%
+#_________________________________________DAY  6____________________________________
+
+
+# %%
+
+#def
+#w hile   Loop
+
+
+
+# %%
+
+#__________________________________DAY7___________________________________________
+
+
+
+# %%
+
+#__________會子手______
+
+
+
+
 # %%
 
 
@@ -293,3 +666,14 @@ else:
 
 
 
+
+
+
+
+# %%
+
+# %%
+
+# %%
+
+# %%
