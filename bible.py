@@ -814,38 +814,130 @@ parrot.sing()
 # %%
 #  super()   單繼承  ok ；多繼承  麻煩
 
+class Animal5():                         # 類別
+    def __init__(self,name):             #方法
+        self.name=name                   #屬性
+    def fly(self):                          #方法
+        print(self.name+ "很會飛！")        #屬性
+    
+class Bird1(Animal5):
+    def __init__(self,name,age):
+        super().__init__(name)                   # 用 super() 執行 父 方法
+        self.age= age
+    def fly(self):
+        print(str(self.age),end="歲")
+        super().fly()                               # 用 super() 執行 父 方法
+
+pigeon1=Animal5("小白鴿")    #以Animal5 建立一個 叫 ___的pigeon1 物件
+pigeon1.fly()
+
+parrot1=Bird1("小鸚鵡",2)
+parrot1.fly()
+
+
+
+# %%
+#________________________多型__(不同類別有 相同的方法)_____________________________
+
+class Animal6():          
+    def fly(self):
+        print("時速20 公 里！")
+class Bird2(Animal6):                           # 有繼承父 放  子類別的() 裡
+    def fly(self,speed):                        # 方法 ()  裡 放  屬性會 用到的 ; self 一定要key
+        print("時速"+ str(speed)+"公里！")
+class Plane():
+    def fly(self):
+        print("時速1000公里！")
+
+def fly(speed):
+    print("時速"+str(speed)+'英哩！')
+
+animal0=Animal6()
+animal0.fly()
+bird0=Bird2()
+bird0.fly(60)
+plane0=Plane()
+plane0.fly()
+
+fly(5)
 
 
 
 
 # %%
-#________________________多型_______________________________
+class Father():
+    def __init__(self,name):
+        self.name=name
+        self.__eye="黑色"                    #定義私用屬性
+    def getEye(self):                       #定義共用方法 傳回私用屬性
+        return self.__eye                      #用 「return 私用屬性」 將私用屬性 傳回
+
+class Child(Father):                        #定義子類別
+    def __init__(self,name,eye):
+        super().__init__(name)
+        self.eye= eye 
+        self.fatherEye=super().getEye()      #取得私用屬性
+
+joe=Child('小華','棕色')
+print(joe.name + '眼睛是'+joe.eye+".他的父親則是" + joe.fatherEye)
 
 
 
 
 # %%
+#______________________多重繼承__
+# _______________class 子類別(父1,父2,父3,......)_______________
 
+class Father1():
+    def say(self):
+        print("明天會更好！")
+class Mother1():
+    def say(self):
+        print("包容、尊重！")
+class Child11(Father1,Mother1):
+    pass
+
+child11=Child11()
+child11.say()
+
+#  先 找 Child11  再找 Father1  ; 若 還是沒有 找 Mother1
+
+
+# %%
+#____________類別應用____________________
+
+class Rectangle():
+    def __init__(self,width,height):
+        self.width=width
+        self.height=height
+
+    def area1(self):
+        return self.width *self.height
+class Triangle(Rectangle):
+    def area2(self):
+        return (self.width*self.height)/2
+
+triangle =Triangle(5,6)
+print("矩形面積=" ,triangle.area1())
+print("三角形面積=",triangle.area2())
 
 
 
 
 
 # %%
-#______________________多重繼承________________________________
-
-
-
-
+# _______專案    看 資料夾 project01________________
 
 # %%
 
 # %%
 
-# %%
 
 # %%
 
-# %%
 
 # %%
+
+
+# %%
+
