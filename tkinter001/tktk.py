@@ -140,6 +140,171 @@ root.destroy()
 
 
 # %%
+from tkinter import*
+root=Tk()
+root.title("ch2_7")
+label=Label(root,text="I like tkinter",
+             fg="blue",bg="yellow",
+             height=3,width=14,
+             anchor='nw',
+             wraplength=40) #文字輸出換行位置
+label.pack()
+root.mainloop()
+root.destroy()
+
+
+# %%
+from tkinter import *
+root =Tk()
+root.title("ch2_8")
+label=Label(root,text="I like tkinter",
+                fg="blue",bg="yellow",
+                height=10,width=20,
+                font="Helvetica 20 bold"
+                
+                )
+label.pack()
+root.mainloop()
+root.destroy()
+
+
+# %%
+
+from tkinter import*
+root=Tk()
+root.title("Ch2_8_1")
+label=Label(root,text="I like tkinter",
+                fg="blue",bg="yellow",
+                height=10,width=20,
+                font=("Helvetica", 20 ,"bold")  #元組 字型
+                
+                )
+label.pack()
+root.mainloop()
+root.destroy()
+
+
+# %%
+from tkinter import*
+root=Tk()
+root.title("ch2_9")
+label=Label(root,text="abcdefghijklmnopqrstuvwxyz",fg="blue",
+            bg="lightyellow",wraplength=80,
+            justify="center")#最後一行 置中
+label.pack()
+root.mainloop()
+root.destroy()
+# %%
+
+from tkinter import*
+
+root=Tk()
+root.title("ch2_13")
+label=Label(root,bitmap="hourglass")# 位元圖
+label.pack()  
+root.mainloop()
+root.destroy()
+
+
+# %%
+from tkinter import*
+root=Tk()
+root.title("ch2_14")
+label=Label(root,bitmap="gray50",
+            compound="left",#圖像在左
+            text="我的天空")
+label.pack()
+root.mainloop()
+root.destroy()
+
+
+# %%
+
+from tkinter import*
+root=Tk()
+root.title("ch2_7")
+
+label=Label(root,text="raised",relief="raised")#控 widget邊框
+label.pack()
+root.mainloop()
+root.destroy()
+
+# %%
+from tkinter import*
+root=Tk()
+root.title("ch2_18")
+label=Label(root,text="raised",relief="raised",
+                bg="lightyellow",
+                padx=5,pady=10)#標籤文字與標籤區間 左右5  上下10
+label.pack()
+root.mainloop()
+root.destroy()
+
+# %%
+from tkinter import *
+
+root = Tk()
+root.title("ch2_19")
+
+html_gif = PhotoImage(file="ccc.gif") #  無效 ??，限 gif ok 才對
+label=Label(root,image=html_gif)
+
+
+label.pack()
+root.mainloop()
+root.destroy()
+
+
+# %%
+from tkinter import *
+from PIL import Image, ImageTk
+
+root = Tk()
+root.title("ch2_19_1")
+root.geometry("1400x900")
+image=Image.open("yellowstone.jpg") #  無效?? , jpg ok 才對 
+lll=ImageTk.PhotoImage(image)
+label=Label(root,image=lll)
+
+label.pack()
+
+root.mainloop()
+root.destroy()
+
+
+
+
+#%%
+from tkinter import *
+
+root = Tk()
+root.title("ch2_20")
+sseText = """SSE全名是Silicon Stone Education,這家公司在美國,
+這是國際專業證照公司,產品多元與豐富."""
+sse_gif = PhotoImage(file="sse.gif") #  無效??
+label=Label(root,text=sseText,image=sse_gif,bg="lightyellow",
+            compound="left")
+label.pack()
+
+root.mainloop()
+
+
+
+
+
+# %%
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -151,7 +316,10 @@ root.destroy()
 
 # %%
 
+
 # %%
+
+
 
 
 
