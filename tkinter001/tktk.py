@@ -295,14 +295,24 @@ root.mainloop()
 # %%
 
 
-
-
-
-
-
-
-
-
+from tkinter import*
+counter=0                                # 計數的全域變數
+def run_counter(digit):                 # 數字變數內容的更動
+    def counting():                     # 更動數字方法
+        global counter                  # 定義這是全域變數
+        counter+=1
+        digit.config(text=str(counter))  #列出標籤數字內容
+        digit.after(1000,counting)      # 隔一秒後呼叫counting
+    counting()                          # 啟動呼叫
+root=Tk()
+root.title("ch2_23")
+digit=Label(root,bg="yellow",fg="blue",
+            height=3,width=10,
+            font="helvetic 20 bold")
+digit.pack()
+run_counter(digit)            # 呼叫數字更動方法
+root.mainloop()
+root.destroy()
 
 
 
@@ -312,14 +322,56 @@ root.mainloop()
 
 # %%
 
+from tkinter import *
 
+root = Tk()
+root.title("ch2_24")
+
+label=Label(root,text="raised",relief="raised",
+            bg="lightyellow",
+            padx=5,pady=10,
+            cursor="heart")     # 滑鼠外形
+label.pack()
+
+root.mainloop()
+root.destroy()
+
+# %%
+from tkinter import *
+
+root = Tk()
+root.title("ch2_25")
+label=Label(root,text="I like tkinter")
+label.pack()        # 包裝與定位元件
+print(label.keys())# 回傳全部 所有label方法的參數(optiob)
+
+root.mainloop()
+root.destroy()
 
 # %%
 
+from tkinter import *
+from tkinter.ttk import Separator
 
-# %%
+root = Tk()
+root.title("ch2_26")
 
+myTitle = "一個人的極境旅行"
+myContent = """2016年12月,我一個人訂了機票和船票,
+開始我的南極旅行,飛機經杜拜再往阿根廷的烏斯懷雅,
+在此我登上郵輪開始我的南極之旅"""
 
+lab1 = Label(root,text=myTitle,
+             font="Helvetic 20 bold")
+lab1.pack(padx=10,pady=10)
+
+sep = Separator(root,orient=HORIZONTAL)    #HORIZONTAL水平分隔線　　　VERTICAL　垂直分隔線｀
+sep.pack(fill=X,padx=5)
+
+lab2 = Label(root,text=myContent)
+lab2.pack(padx=10,pady=10)
+
+root.mainloop()
 
 
 
