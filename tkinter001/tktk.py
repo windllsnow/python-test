@@ -29,6 +29,7 @@ win.destroy()
 #%%
 
 from tkinter import *
+from tkinter import font
 
 root=Tk()
 root.title("Mywindows")
@@ -336,6 +337,7 @@ label.pack()
 root.mainloop()
 root.destroy()
 
+
 # %%
 from tkinter import *
 
@@ -379,6 +381,551 @@ root.mainloop()
 
 # %%
 
+from tkinter import*
+window=Tk()
+window.title("CH3_1")
+lab1=Label(window,text="明志科技大學",
+            bg="lightyellow")
+lab2=Label(window,text="長庚大學",
+            bg="lightgreen")
+lab3=Label(window,text="長庚科技大學",
+            bg="lightblue")
+lab1.pack()
+lab2.pack()
+lab3.pack()
+window.mainloop()
+window.destroy()
+
+# %%
+
+from tkinter import*
+window=Tk()
+window.title("ch3_2")               # 視窗標題
+lab1 = Label(window,text="明志科技大學",
+              bg="lightyellow",     # 標籤背景是淺黃色
+              width=15)             # 標籤寬度是15
+lab2 = Label(window,text="長庚大學",
+              bg="lightgreen",      # 標籤背景是淺綠色
+              width=15)             # 標籤寬度是15
+lab3 = Label(window,text="長庚科技大學",
+              bg="lightblue",       # 標籤背景是淺藍色
+              width=15)   
+lab1.pack(side=BOTTOM)  # TOP BOTTOM LEFT RIGHT
+lab2.pack(side=RIGHT)
+lab3.pack(side=LEFT) 
+window.mainloop()
+window.destroy()
+
+
+
+# %%
+from tkinter import*
+Reliefs=["flat","groove","raised","ridge","solid","sunken"]
+root=Tk()
+root.title("ch3_5")
+for Relief in Reliefs:
+    Label(root,text=Relief,relief=Relief,
+            fg="blue",
+            font="Times 20 bold").pack(side=LEFT,padx=10)
+root.mainloop()
+root.destroy()
+# %%
+from tkinter import *
+
+bitMaps = ["error","hourglass","info","questhead","question",
+           "warning","gray12","gray25","gray50","gray75"]
+
+root = Tk()
+root.title("ch3_5_1")
+
+for bitMap in bitMaps:
+    Label(root,bitmap=bitMap).pack(side=LEFT,padx=5)
+
+root.mainloop()
+root.destroy()
+
+
+# %%
+
+from tkinter import *
+
+window = Tk()
+window.title("ch3_6")               # 視窗標題
+lab1 = Label(window,text="明志科技大學",
+              bg="lightyellow")     # 標籤背景是淺黃色
+lab2 = Label(window,text="長庚大學",
+              bg="lightgreen")      # 標籤背景是淺綠色
+lab3 = Label(window,text="長庚科技大學",
+              bg="lightblue")       # 標籤背景是淺藍色
+lab1.pack(fill=X)       # 填滿X軸包裝與定位元件       
+lab2.pack(pady=10)      # y軸增加10像素
+lab3.pack(fill=X)       # 填滿X軸包裝與定位元件
+window.mainloop()
+window.destroy()
+# %%
+from tkinter import *
+
+window = Tk()
+window.title("ch3_7")               # 視窗標題
+lab1 = Label(window,text="明志科技大學",
+              bg="lightyellow")     # 標籤背景是淺黃色
+lab2 = Label(window,text="長庚大學",
+              bg="lightgreen")      # 標籤背景是淺綠色
+lab3 = Label(window,text="長庚科技大學",
+              bg="lightblue")       # 標籤背景是淺藍色
+lab1.pack(fill=X,pady=10)           # 填滿X軸,Y軸增加10像素
+lab2.pack(pady=10)                  # Y軸增加10像素
+lab3.pack(fill=X)                   # 填滿X軸包裝與定位元件
+
+window.mainloop()
+window.destroy()
+
+
+# %%
+from tkinter import *
+
+window = Tk()
+window.title("ch3_10")               # 視窗標題
+lab1 = Label(window,text="明志科技大學",
+              bg="lightyellow")     # 標籤背景是淺黃色
+lab2 = Label(window,text="長庚大學",
+              bg="lightgreen")      # 標籤背景是淺綠色
+lab3 = Label(window,text="長庚科技大學",
+              bg="lightblue")       # 標籤背景是淺藍色
+lab1.pack(ipady=22)                     
+lab2.pack(ipadx=4)          # ipadx=4包裝與定位元件
+lab3.pack(ipady=34)
+
+
+window.mainloop()
+window.destroy()
+
+# %%
+
+
+from tkinter import *
+
+root = Tk()
+root.title("ch3_12")
+root.geometry("300x180")            # 設定視窗勘寬300高180
+oklabel=Label(root,text="OK",       # 標籤內容是OK
+              font="Times 20 bold", # Times字型20粗體
+              fg="white",bg="blue") # 藍底白字
+oklabel.pack(anchor=S,side=RIGHT,   # 從右開始在南方配置
+             padx=10,pady=10)       # x和y軸間距皆是10
+
+root.mainloop()
+
+
+
+
+
+
+# %%
+from tkinter import *
+
+root = Tk()
+root.title("ch3_13")
+root.geometry("300x180")            # 設定視窗勘寬300高180
+oklabel=Label(root,text="OK",       # 標籤內容是OK
+              font="Times 20 bold", # Times字型20粗體
+              fg="white",bg="blue") # 藍底白字
+oklabel.pack(anchor=S,side=LEFT,   # 從右開始在南方配置
+             padx=10,pady=10)       # x和y軸間距皆是10
+nolabel=Label(root,text="NO",       # 標籤內容是OK
+              font="Times 20 bold", # Times字型20粗體
+              fg="white",bg="red")  # 藍底白字
+nolabel.pack(anchor=N,side=RIGHT,   # 從右開始在北方配置
+             padx=10,pady=10)        # y軸間距皆是10
+
+
+root.mainloop()
+
+
+
+
+# %%
+
+from tkinter import *
+
+window = Tk()
+window.title("ch3_15")              # 視窗標題
+lab1 = Label(window,text="明志科技大學",
+              bg="lightyellow")     # 標籤背景是淺黃色
+lab2 = Label(window,text="長庚大學",
+              bg="lightgreen")      # 標籤背景是淺綠色
+lab3 = Label(window,text="長庚科技大學",
+              bg="lightblue")       # 標籤背景是淺藍色
+lab1.pack(side=LEFT,fill=Y)                   # 填滿X軸包裝與定位元件
+lab2.pack(fill=X)                   # 填滿Y軸包裝與定位元件
+lab3.pack(fill=BOTH,expand=True)                   # 填滿X軸包裝與定位元件
+
+window.mainloop()
+
+
+
+# %%
+
+from tkinter import *
+
+root = Tk()
+root.title("ch3_23")
+root.geometry("300x180")   
+
+print("執行前",root.pack_slaves())
+oklabel=Label(root,text="OK",
+            font="Times 20 bold",
+            fg="white",bg="blue")
+oklabel.pack(anchor=S,side=RIGHT,
+            padx=10,pady=15)
+nolabel=Label(root,text="no",
+                font="Times 20 bold",
+                fg="white",bg="red")
+nolabel.pack(anchor=S,side=RIGHT,
+                pady=10)
+print("執行後",root.pack_slaves())
+root.mainloop()
+
+
+# %%
+
+from tkinter import *
+
+window = Tk()
+window.title("ch3_25")              # 視窗標題
+lab1 = Label(window,text="明志科技大學",
+             bg="lightyellow",      # 標籤背景是淺黃色
+             width=15)              # 標籤寬度是15     
+lab2 = Label(window,text="長庚大學",
+             bg="lightgreen",       # 標籤背景是淺綠色
+             width=15)              # 標籤寬度是15            
+lab3 = Label(window,text="長庚科技大學",
+             bg="lightblue",        # 標籤背景是淺藍色
+             width=15)              # 標籤寬度是15
+lab1.grid(row=0,column=0)
+lab2.grid(row=1,column=2)
+lab3.grid(row=2,column=1)
+window.mainloop()
+# %%
+
+from tkinter import *
+
+window = Tk()
+window.title("ch3_26")              # 視窗標題
+lab1 = Label(window,text="標籤1",relief="raised")
+lab2 = Label(window,text="標籤2",relief="raised")
+lab3 = Label(window,text="標籤3",relief="raised")
+lab4 = Label(window,text="標籤4",relief="raised")
+lab5 = Label(window,text="標籤5",relief="raised")
+lab6 = Label(window,text="標籤6",relief="raised")
+lab7 = Label(window,text="標籤7",relief="raised")
+lab8 = Label(window,text="標籤8",relief="raised")
+lab1.grid(row=0,column=0,rowspan=2,columnspan=2)
+lab2.grid(row=0,column=1)
+lab4.grid(row=0,column=3,rowspan=2)
+lab5.grid(row=1,column=0)
+
+
+lab7.grid(row=1,column=2)
+
+
+
+
+
+window.mainloop()
+
+
+# %%
+from tkinter import *
+
+window = Tk()
+window.title("ch3_30")              # 視窗標題
+lab1 = Label(window,text="標籤1",relief="raised")
+lab2 = Label(window,text="標籤2",relief="raised")
+lab3 = Label(window,text="標籤3",relief="raised")
+lab4 = Label(window,text="標籤4",relief="raised")
+lab5 = Label(window,text="標籤5",relief="raised")
+lab6 = Label(window,text="標籤6",relief="raised")
+lab7 = Label(window,text="標籤7",relief="raised")
+lab8 = Label(window,text="標籤8",relief="raised")
+lab1.grid(row=0,column=0,padx=5,pady=5)
+lab2.grid(row=0,column=1,padx=5,pady=5)
+lab3.grid(row=0,column=2,padx=5,pady=5)
+lab4.grid(row=0,column=3,padx=5,pady=5)
+lab5.grid(row=1,column=0,padx=5)
+lab6.grid(row=1,column=1,padx=5)
+lab7.grid(row=1,column=2,padx=5)
+lab8.grid(row=1,column=3,padx=5)
+
+window.mainloop()
+
+
+
+# %%
+from tkinter import *
+
+window = Tk()
+window.title("ch3_32")              # 視窗標題
+lab1 = Label(window,text="明志工專")
+lab2 = Label(window,bg="yellow",width=20)
+lab3 = Label(window,text="明志科121263563大")
+lab4 = Label(window,bg="aqua",width=10)
+lab5 = Label(window,bg="blue",width=5)
+lab6 = Label(window,bg="red",width=5)
+lab7 = Label(window,bg="pink",width=5)
+lab1.grid(row=0,column=0,padx=5,pady=5,sticky=W)  # 左
+lab2.grid(row=0,column=1,padx=5,pady=5)
+lab3.grid(row=1,column=0,padx=5)
+lab4.grid(row=1,column=1,padx=5,sticky=E)  # 右
+lab5.grid(row=2,column=0,padx=5,sticky=E+S)  # 拉長
+lab6.grid(row=2,column=1,padx=5,sticky=N+S)  # 拉長
+lab7.grid(row=3,padx=5,sticky=N+S+W+E)       # 拉長
+window.mainloop()
+
+
+# %%
+
+from tkinter import*
+root=Tk()
+root.title("ch3_35")
+Color=["red","orange","yellow","green","blue","purple"]
+r=0
+for color in Color:
+    Label(root,text=color,relief="groove",width=20).grid(row=r,column=0)
+    Label(root,bg=color,relief="ridge",width=20).grid(row=r,column=1)
+    r+=1
+root.mainloop()
+# %%
+
+
+from tkinter import *
+
+root = Tk()
+root.title("ch3_35_1")
+
+root.rowconfigure(1, weight=1)      #????
+root.columnconfigure(0, weight=1)   #????
+
+lab1 = Label(root,text="Label 1",bg="pink")
+lab1.grid(row=0,column=0,padx=5,pady=5)
+
+lab2 = Label(root,text="Label 2",bg="lightblue")
+lab2.grid(row=0,column=1,padx=5,pady=5)
+
+lab3 = Label(root,bg="yellow")
+lab3.grid(row=1,column=0,columnspan=2,padx=5,pady=5)
+
+root.mainloop()
+
+# %%
+
+from tkinter import *
+
+root = Tk()
+root.title("ch3_35_2")
+
+root.rowconfigure(1, weight=1)
+root.columnconfigure(0, weight=1)
+
+lab1 = Label(root,text="Label 1",bg="pink")
+lab1.grid(row=0,column=0,padx=5,pady=5,stick=W)
+
+lab2 = Label(root,text="Label 2",bg="lightblue")
+lab2.grid(row=0,column=1,padx=5,pady=5)
+
+lab3 = Label(root,bg="yellow")
+lab3.grid(row=1,column=0,columnspan=2,padx=5,pady=5,
+          sticky=N+S+W+E)
+
+root.mainloop()
+
+#%%
+
+
+# %%
+from tkinter  import*
+root=Tk()
+root.title("ch3_39")
+root.geometry("640x480")
+
+night=PhotoImage(file="night.png") #  有問題
+label=Label(root,image=night)
+label.place(relx=0.1,rely=0.1,relheight=0.8)
+
+root.mainloop()
+root.destroy()
+
+
+
+# %%
+from tkinter import *
+
+root = Tk()
+root.title("ch3_38")
+root.geometry("640x480")
+
+night = PhotoImage(file="night.png")
+label=Label(root,image=night)
+label.place(relx=0.1,rely=0.1,relwidth=0.8,relheight=0.8)
+
+root.mainloop()
+
+#%%
+# ch3_36.py
+from tkinter import *
+
+window = Tk()
+window.title("ch3_36")              # 視窗標題
+lab1 = Label(window,text="明志科技大學",
+              bg="lightyellow",     # 標籤背景是淺黃色
+              width=15)             # 標籤寬度是15
+lab2 = Label(window,text="長庚大學",
+              bg="lightgreen",      # 標籤背景是淺綠色
+              width=15)             # 標籤寬度是15
+lab3 = Label(window,text="長庚科技大學",
+              bg="lightblue",       # 標籤背景是淺藍色
+              width=15)             # 標籤寬度是15
+lab1.place(x=0,y=0)                 # 直接定位
+lab2.place(x=30,y=50)               # 直接定位
+lab3.place(x=60,y=100)              # 直接定位
+
+window.mainloop()
+
+# %%
+
+from tkinter import *
+
+root = Tk()
+root.title("ch3_37")
+root.geometry("640x480")
+
+night = PhotoImage(file="night.png")     #  有問題
+lab1 = Label(root,image=night)
+lab1.place(x=20,y=30,width=200,height=120)
+snow = PhotoImage(file="snow.png")      # 影像snow
+lab2 = Label(root,image=snow)
+lab2.place(x=200,y=200,width=400,height=240)
+
+root.mainloop()
+
+# %%
+from tkinter import*
+
+def msgShow():
+    label["text"]="I love Python"
+    label["bg"]="lightyellow"
+    label["fg"]="blue"
+
+root=Tk()
+root.title("ch4_1")
+label=Label(root)
+btn=Button(root,text="列印訊息",command=msgShow)
+label.pack()
+btn.pack()
+
+root.mainloop()
+
+# %%
+from tkinter import*
+def msfShow():
+    label.config(text="I love Python",bg="lightyellow",fg="blue")  # 建立or更改 屬性
+root=Tk()
+root.title("ch4_2")
+label=Label(root)
+btn=Button(root,text="列印訊息",command=msfShow)
+label.pack()
+btn.pack()
+root.mainloop()
+root.destroy()
+#%%
+
+from tkinter import *
+
+def msgShow():
+    label.config(text="I love Python",bg="lightyellow",fg="blue")
+      
+root = Tk()
+root.title("ch4_3")                 # 視窗標題
+label = Label(root)                 # 標籤內容             
+btn1 = Button(root,text="列印訊息",width=15,command=msgShow)
+btn2 = Button(root,text="結束",width=15,command=root.destroy) # 關視窗
+label.pack()                      
+btn1.pack(side=LEFT)
+btn2.pack(side=LEFT)
+
+root.mainloop()
+
+
+
+
+
+
+# %%
+from tkinter import *
+
+counter = 0                                 # 計數的全域變數
+def run_counter(digit):                     # 數字變數內容的更動
+    def counting():                         # 更動數字方法
+        global counter                       #定義這是全域變數
+        counter += 1                        
+        digit.config(text=str(counter))     # 列出標籤數字內容
+        digit.after(1000,counting)          # 隔一秒後呼叫counting
+    counting()                              # 持續呼叫
+
+root = Tk()
+root.title("ch4_4")
+digit=Label(root,bg="yellow",fg="blue",     
+            height=3,width=10,              
+            font="Helvetica 20 bold")       
+digit.pack()
+run_counter(digit)                          # 呼叫數字更動方法
+Button(root,text="結束",width=15,command=root.destroy).pack(pady=10)
+
+root.mainloop()
+
+# %%
+from tkinter import *
+
+def yellow():                   # 設定視窗背景是黃色
+    root.config(bg="yellow")
+def blue():                     # 設定視窗背景是藍色
+    root.config(bg="blue")
+    
+root = Tk()
+root.title("ch4_5")
+root.geometry("300x200")        # 固定視窗大小
+# 依次建立3個鈕
+exitbtn = Button(root,text="Exit",command=root.destroy) 
+bluebtn = Button(root,text="Blue",command=blue)
+yellowbtn = Button(root,text="Yellow",command=yellow)
+# 將3個鈕包裝定位在右下方
+exitbtn.pack(anchor=S,side=RIGHT,padx=5,pady=5) # 靠下靠右  最先
+bluebtn.pack(anchor=S,side=RIGHT,padx=5,pady=5)
+yellowbtn.pack(anchor=S,side=RIGHT,padx=5,pady=5)
+
+root.mainloop()
+
+
+
+# %%
+from tkinter import *
+
+def bColor(bgColor):          # 設定視窗背景顏色
+    root.config(bg=bgColor)
+    
+root = Tk()
+root.title("ch4_5")
+root.geometry("300x200")        # 固定視窗大小
+# 依次建立3個鈕
+exitbtn = Button(root,text="Exit",command=root.destroy)
+bluebtn = Button(root,text="Blue",command=lambda:bColor("blue"))
+yellowbtn = Button(root,text="Yellow",command=lambda:bColor("yellow"))
+# 將3個鈕包裝定位在右下方
+exitbtn.pack(anchor=S,side=RIGHT,padx=5,pady=5)
+bluebtn.pack(anchor=S,side=RIGHT,padx=5,pady=5)
+yellowbtn.pack(anchor=S,side=RIGHT,padx=5,pady=5)
+
+root.mainloop()
 
 
 # %%
@@ -386,6 +933,235 @@ root.mainloop()
 
 
 
+
+
+
+# %%
+
+#%%
+from tkinter import *
+
+def msgShow():
+    label.config(text="I love Python",bg="lightyellow",fg="blue")
+      
+root = Tk()
+root.title("ch4_6")                                 # 視窗標題
+label = Label(root)                                 # 標籤內容
+
+sunGif = PhotoImage(file="sun.gif")                 # Image物件
+btn = Button(root,image=sunGif,command=msgShow)     # 含影像的按鈕
+label.pack()                      
+btn.pack()
+
+root.mainloop()
+
+# %%
+from tkinter import *
+
+def msgShow():
+    label.config(text="I love Python",bg="lightyellow",fg="blue")
+      
+root = Tk()
+root.title("ch4_7")                                 # 視窗標題
+label = Label(root)                                 # 標籤內容
+
+sunGif = PhotoImage(file="sun.gif")                 # Image物件
+btn = Button(root,image=sunGif,command=msgShow,     # 含文字與影像的按鈕
+             text="Click Me",compound=TOP)          
+label.pack()                      
+btn.pack()
+
+root.mainloop()
+
+
+# %%
+
+from tkinter import *
+
+def msgShow():
+    label.config(text="I love Python",bg="lightyellow",fg="blue")
+      
+root = Tk()
+root.title("ch4_8")                                  # 視窗標題
+label = Label(root)                                 # 標籤內容
+
+sunGif = PhotoImage(file="sun.gif")                 # Image物件
+btn = Button(root,image=sunGif,command=msgShow,     # 含文字與影像的按鈕
+             text="Click Me",compound=CENTER)          
+label.pack()                      
+btn.pack()
+
+root.mainloop()
+
+#%%
+from tkinter import *
+
+def msgShow():
+    label.config(text="I love Python",bg="lightyellow",fg="blue")
+      
+root = Tk()
+root.title("ch4_9")                                  # 視窗標題
+label = Label(root)                                 # 標籤內容
+
+sunGif = PhotoImage(file="sun.gif")                 # Image物件
+btn = Button(root,image=sunGif,command=msgShow,     # 含文字與影像的按鈕
+             text="Click Me",compound=LEFT)          
+label.pack()                      
+btn.pack()
+
+root.mainloop()
+
+
+
+
+# %%
+
+# ch4_10.py
+from tkinter import *
+
+root = Tk()
+
+root.title("ch4_10")                                # 視窗標題
+lab  = Label(root,text="",bg="yellow",width=20)
+btn7 = Button(root,text="7",width=3)
+btn8 = Button(root,text="8",width=3)
+btn9 = Button(root,text="9",width=3)
+btnM = Button(root,text="*",width=3)                # 乘法符號
+btn4 = Button(root,text="4",width=3)
+btn5 = Button(root,text="5",width=3)
+btn6 = Button(root,text="6",width=3)
+btnS = Button(root,text="-",width=3)                # 減法符號
+btn1 = Button(root,text="1",width=3)
+btn2 = Button(root,text="2",width=3)
+btn3 = Button(root,text="3",width=3)
+btnP = Button(root,text="+",width=3)                # 加法符號
+btn0 = Button(root,text="0",width=8)
+btnD = Button(root,text=".",width=3)                # 小數點符號
+btnE = Button(root,text="=",width=3)                # 等號符號
+
+lab.grid(row=0,column=0,columnspan=4)
+btn7.grid(row=1,column=0,padx=5)
+btn8.grid(row=1,column=1,padx=5)
+btn9.grid(row=1,column=2,padx=5)
+btnM.grid(row=1,column=3,padx=5)                    # 乘法符號
+btn4.grid(row=2,column=0,padx=5)
+btn5.grid(row=2,column=1,padx=5)
+btn6.grid(row=2,column=2,padx=5)
+btnS.grid(row=2,column=3,padx=5)                    # 減法符號
+btn1.grid(row=3,column=0,padx=5)
+btn2.grid(row=3,column=1,padx=5)
+btn3.grid(row=3,column=2,padx=5)
+btnP.grid(row=3,column=3,padx=5)                    # 加法符號
+btn0.grid(row=4,column=0,padx=5,columnspan=2)
+btnD.grid(row=4,column=2,padx=5)                    # 小數點符號
+btnE.grid(row=4,column=3,padx=5)                    # 等號符號
+
+root.mainloop()
+
+
+
+
+
+
+
+
+
+# %%
+from tkinter import *
+
+def msgShow():
+    label.config(text="I love Python",bg="lightyellow",fg="blue")
+      
+root = Tk()
+root.title("ch4_11")                                # 視窗標題
+
+label = Label(root)                                 # 標籤內容
+
+sunGif = PhotoImage(file="sun.gif")                 # Image物件
+btn = Button(root,image=sunGif,command=msgShow,     # 含影像的按鈕
+             cursor="star")                         # star外形   
+label.pack()                      
+btn.pack()
+
+root.mainloop()
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
+
+
+
+# %%
 
 
 
@@ -497,6 +1273,7 @@ class Application(tk.Frame):
                 
 root = tk.Tk()
 app = Application(root)
+
 root.mainloop()
 
 #《程式語言教學誌》的範例程式
