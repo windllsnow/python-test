@@ -733,17 +733,17 @@ class Animal():
     def sing(self):
         print("很會唱歌")
 
-bird=Animal()
-print(bird.name3)
-bird.sing()
+bird=Animal()            #bird = Animal()  這個類別
+print(bird.name3)        # 類別.方法()
+bird.sing()               # 類別.方法()
 
 
 # %%
 
 class Animal1():                    #類別
-    def __init__(self,name):        # 
-        self.name=name              #屬性                . 屬性        
-    def sing(self):                 #方法                   .方法()
+    def __init__(self,name):        # self,xxx,yyy,zzz....
+        self.name=name              #屬性             self.xxx(除了self外)       
+    def sing(self):                 #方法                   
         print(self.name +",很會唱歌！")
 bird =Animal1("鸚鵡")               # 以Animal1 類別，建立一個名叫鸚鵡的bird 物件
 print(bird.name)
@@ -926,18 +926,41 @@ print("三角形面積=",triangle.area2())
 
 
 # %%
-# _______專案    看 資料夾 project01________________
+def div(a,b):
+    return a/b
+
+print(div(6,2))
+print(div(4,2))
+# print(div(3,0))  <--中止程式
 
 # %%
+try:
+    print(n)
+except:
+    print("變數 n 不存在！")
 
 # %%
-
-
+n=2
+try:
+    n+=1
+except:
+    print("變數 n 不存在！  ")
+else:
+    print("n=",n)
 # %%
 
+try:
+    print(n)
+except Exception as e:
+    print(e)
 
 # %%
-
+try:
+    print(n)
+except:
+    print("變數 n 不存在！")
+finally:
+    print("一定會埶行的程式區塊")
 
 # %%
 
