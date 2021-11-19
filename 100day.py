@@ -584,11 +584,11 @@ nr_numberss=int(input("How many numbers would you like? \n"))
 # _________________________________________________easy__________________________________
 password=""
 for char in range(1,nr_letters+1):
-    password+=random.choice(letterss)
+    password+=r.choice(letterss)
 for char in range(1,nr_symbols+1):
-    password+=random.choice(symbols)
+    password+=r.choice(symbols)
 for char in range(1,nr_numberss+1):
-    password+=random.choice(numberss)
+    password+=r.choice(numberss)
 print(password)
 
 
@@ -619,11 +619,11 @@ nr_numberss=int(input("How many numbers would you like? \n"))
 
 password_list1=[]
 for char in range(1,nr_letters+1):
-    password_list1+=random.choice(letterss)
+    password_list1+=r.choice(letterss)
 for char in range(1,nr_symbols+1):
-    password_list1+=random.choice(symbols)
+    password_list1+=r.choice(symbols)
 for char in range(1,nr_numberss+1):
-    password_list1+=random.choice(numberss)
+    password_list1+=r.choice(numberss)
 print(password_list1)
 
 r.shuffle(password_list1)
@@ -649,15 +649,61 @@ print(f"Your password  is {password1}")
 #__________________________________DAY7___________________________________________
 
 
+# %%
+
+#__________劊子手___超難 =='''
+
+word_list=["ardvark","baboon","camel"]
+
+import random
+choice_word=random.choice(word_list)
+print(f"pssst, the solution is {choice_word}.")
+
+display=[]
+word_length=len(choice_word)
+
+for _ in range(word_length):
+    display+="_"
+print(display)
+
+
+
+game_times=0
+
+while  game_times<6:
+
+    guess=input("Guess a letter:").lower()
+    print(f"your letter you key one second before is' {guess} ' ")
+
+    for position in range(word_length):
+        letter=choice_word[position]
+
+        if letter==guess:
+            display[position]=letter
+    print("The rusult is \n")
+    print(display)
+    game_times+=1
+    if "_" not in display:
+        game_times+=6
+        print("your win")
+
+if game_times==6:
+    print("you lose, die!")
+else:
+    print("Concretulation")
+
+
+
+
+
 
 # %%
 
-#__________會子手______
 
 
 
 
-# %%
+
 
 
 
