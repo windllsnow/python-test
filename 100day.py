@@ -651,7 +651,7 @@ print(f"Your password  is {password1}")
 
 # %%
 
-#__________劊子手___超難 =='''
+#__________劊子手___超難 =='''  //我的mind  都扣1  出去再判斷
 
 word_list=["ardvark","baboon","camel"]
 
@@ -698,12 +698,408 @@ else:
 
 
 # %%
+#__________劊子手___超難 ==''' 扣命
+
+word_list=["ardvark","baboon","camel"]
+
+import random
+choice_word=random.choice(word_list)
+print(f"pssst, the solution is {choice_word}.")
+
+display=[]
+word_length=len(choice_word)
+
+for _ in range(word_length):
+    display+="_"
+print(display)
+
+
+
+end_of_game=False
+lives=6
+
+while  end_of_game==False:
+
+    guess=input("Guess a letter:").lower()
+    print(f"your letter you key one second before is' {guess} ' ")
+    for position in range(word_length):
+        letter=choice_word[position]
+
+        if letter==guess:
+            display[position]=letter
+    
+
+    if guess not in choice_word:
+
+        lives-=1  #bug 是 如果輸入一樣 無限迴圈
+        if lives==0:
+            end_of_game=True
+            print("you lose!")
+
+    print("The rusult is \n")
+    print(f"{''.join(display)}")
+    
+    if "_" not in display:
+        end_of_game==True
+        print("your win")
 
 
 
 
+# %%
+
+#__________劊子手___超難 ==''' 扣命 final 
+# 有bug  成功無法  跳出  ，一定要失敗  =='''
+
+word_list = [
+'abruptly', 
+'absurd', 
+'abyss', 
+'affix', 
+'askew', 
+'avenue', 
+'awkward', 
+'axiom', 
+'azure', 
+'bagpipes', 
+'bandwagon', 
+'banjo', 
+'bayou', 
+'beekeeper', 
+'bikini', 
+'blitz', 
+'blizzard', 
+'boggle', 
+'bookworm', 
+'boxcar', 
+'boxful', 
+'buckaroo', 
+'buffalo', 
+'buffoon', 
+'buxom', 
+'buzzard', 
+'buzzing', 
+'buzzwords', 
+'caliph', 
+'cobweb', 
+'cockiness', 
+'croquet', 
+'crypt', 
+'curacao', 
+'cycle', 
+'daiquiri', 
+'dirndl', 
+'disavow', 
+'dizzying', 
+'duplex', 
+'dwarves', 
+'embezzle', 
+'equip', 
+'espionage', 
+'euouae', 
+'exodus', 
+'faking', 
+'fishhook', 
+'fixable', 
+'fjord', 
+'flapjack', 
+'flopping', 
+'fluffiness', 
+'flyby', 
+'foxglove', 
+'frazzled', 
+'frizzled', 
+'fuchsia', 
+'funny', 
+'gabby', 
+'galaxy', 
+'galvanize', 
+'gazebo', 
+'giaour', 
+'gizmo', 
+'glowworm', 
+'glyph', 
+'gnarly', 
+'gnostic', 
+'gossip', 
+'grogginess', 
+'haiku', 
+'haphazard', 
+'hyphen', 
+'iatrogenic', 
+'icebox', 
+'injury', 
+'ivory', 
+'ivy', 
+'jackpot', 
+'jaundice', 
+'jawbreaker', 
+'jaywalk', 
+'jazziest', 
+'jazzy', 
+'jelly', 
+'jigsaw', 
+'jinx', 
+'jiujitsu', 
+'jockey', 
+'jogging', 
+'joking', 
+'jovial', 
+'joyful', 
+'juicy', 
+'jukebox', 
+'jumbo', 
+'kayak', 
+'kazoo', 
+'keyhole', 
+'khaki', 
+'kilobyte', 
+'kiosk', 
+'kitsch', 
+'kiwifruit', 
+'klutz', 
+'knapsack', 
+'larynx', 
+'lengths', 
+'lucky', 
+'luxury', 
+'lymph', 
+'marquis', 
+'matrix', 
+'megahertz', 
+'microwave', 
+'mnemonic', 
+'mystify', 
+'naphtha', 
+'nightclub', 
+'nowadays', 
+'numbskull', 
+'nymph', 
+'onyx', 
+'ovary', 
+'oxidize', 
+'oxygen', 
+'pajama', 
+'peekaboo', 
+'phlegm', 
+'pixel', 
+'pizazz', 
+'pneumonia', 
+'polka', 
+'pshaw', 
+'psyche', 
+'puppy', 
+'puzzling', 
+'quartz', 
+'queue', 
+'quips', 
+'quixotic', 
+'quiz', 
+'quizzes', 
+'quorum', 
+'razzmatazz', 
+'rhubarb', 
+'rhythm', 
+'rickshaw', 
+'schnapps', 
+'scratch', 
+'shiv', 
+'snazzy', 
+'sphinx', 
+'spritz', 
+'squawk', 
+'staff', 
+'strength', 
+'strengths', 
+'stretch', 
+'stronghold', 
+'stymied', 
+'subway', 
+'swivel', 
+'syndrome', 
+'thriftless', 
+'thumbscrew', 
+'topaz', 
+'transcript', 
+'transgress', 
+'transplant', 
+'triphthong', 
+'twelfth', 
+'twelfths', 
+'unknown', 
+'unworthy', 
+'unzip', 
+'uptown', 
+'vaporize', 
+'vixen', 
+'vodka', 
+'voodoo', 
+'vortex', 
+'voyeurism', 
+'walkway', 
+'waltz', 
+'wave', 
+'wavy', 
+'waxy', 
+'wellspring', 
+'wheezy', 
+'whiskey', 
+'whizzing', 
+'whomever', 
+'wimpy', 
+'witchcraft', 
+'wizard', 
+'woozy', 
+'wristwatch', 
+'wyvern', 
+'xylophone', 
+'yachtsman', 
+'yippee', 
+'yoked', 
+'youthful', 
+'yummy', 
+'zephyr', 
+'zigzag', 
+'zigzagging', 
+'zilch', 
+'zipper', 
+'zodiac', 
+'zombie', 
+]
+
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
+logo = ''' 
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/    '''
+
+                                                                    
+                                                                    
 
 
+import random
+from replit import clear
+
+
+
+print(logo)
+
+
+
+end_of_game=False
+lives=len(stages)-1
+
+
+
+chosen_word = random.choice(word_list)
+word_length=len(chosen_word)
+display=[]
+print(f"pssst, the solution is {chosen_word}.")
+for _ in range(word_length):
+    display+="_"
+print(display)
+
+
+
+
+while  not end_of_game:
+
+    guess=input("Guess a letter:").lower()
+    clear()
+   
+    
+    if guess in display:
+        print(f"you've already guessed{guess}")
+
+
+    for position in range(word_length):
+        letter=chosen_word[position]
+
+        if letter==guess:
+            display[position]=letter
+    print(f"{''.join(display)}")
+
+    if guess not in chosen_word:
+        print(f"you guessd{guess},that's not in the word. your lost your life ")
+        lives-=1  #bug 是 如果輸入一樣 無限迴圈
+        if lives==0:
+            end_of_game=True
+            print("you lose!")
+
+
+
+    
+    if "_" not in display:
+        end_of_game==True
+        print("your win")
+        
+        
+   
+    print(stages[lives])
+    
+#fuck  fuck yes  >_<
+#fuck  fuck yes  >_<
 
 
 
@@ -716,7 +1112,14 @@ else:
 
 
 
-# %%
+
+
+
+
+
+
+
+
 
 # %%
 
