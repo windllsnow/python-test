@@ -100,10 +100,55 @@ print(value)
 # %%
 
 
+def hide_card(card_number):
+    return card_number[-4:]
+
+
+x = input("Please key you 12 digits number of your credit card")
+my_card = hide_card(x)
+
+
+print(f"**** ****  {my_card}")
 # %%
 
 
+def hide_card(card_numbers):
+    cards_list = []
+    for card_number in card_numbers:
+        last_four_digit_number = card_number[-4:]
+        formatted_credit_card = f"**** **** **** {last_four_digit_number}"
+        cards_list.append(formatted_credit_card)
+    return cards_list
+
+
+my_card = hide_card(['123456789012', '987654321098'])
+print(my_card)
+
 # %%
+x = "123456789"
+z = x[-4:]
+print(z)
+
+
+y = []
+y.append(z)
+print(y)
+
+
+z1 = int(z)
+y1 = []
+y1.append(z1)
+print(y1)
 
 
 # %%
+#  list 裡  單一  字串元素==> list 裡的 多個元素
+
+
+y = ['123']
+z = []
+
+for i in y:
+    z += i
+
+print(z)
