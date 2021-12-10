@@ -152,3 +152,55 @@ for i in y:
     z += i
 
 print(z)
+# %%
+
+
+class creditcard:
+    def __init__(self, number, company, limit="399"):
+        self.number = number
+        self.limit = limit
+        self.company = company
+
+    def hide(self):
+        print("hiding!")
+        self.number = f"**** **** ****{self.number[-4:]}"
+
+
+c1 = creditcard(number="1231", company="jim")
+print(c1.number)
+c1.hide()
+print(c1.number)
+
+# %%
+
+
+class creditcard:
+    limit_raise_amout = 1.5
+
+    def __init__(self, number, limit):
+        self.number = number
+        self.limit = limit
+
+    def hide(self):
+        self.number = f"**** **** **** {self.number[-4]}"
+
+    def raise_limit(self):
+        self.limit = creditcard.limit_raise_amout*self.limit
+        print(f"Congratulation!!{self.limit}and {self.number}")
+
+
+c1 = creditcard(number="1213121312321212", limit=1000)
+c1.raise_limit()
+c2 = creditcard(number="999999999999999", limit=1000)
+c2.raise_limit()
+
+# %%
+
+
+name = input("please enter your name?")
+age = int(input(f"How old are you, {name}?"))
+print(age)
+if age >= 18:
+    print("You are so old!")
+else:
+    print("So young!")
