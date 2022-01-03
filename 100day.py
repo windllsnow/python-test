@@ -47,7 +47,7 @@ print(s1)
 print(s2)
 print(s3)  # 这个代码执行后, 输出的结果是随机的
 '''
-总结: 
+总结:
 
 1、如果集合的元素都是数字, 删除时, 删掉的是最小的数字, 其余数字升序排列
 
@@ -996,14 +996,14 @@ stages = ['''
 =========
 ''']
 
-logo = ''' 
- _                                             
-| |                                            
-| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
-| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+logo = '''
+ _
+| |
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \
 | | | | (_| | | | | (_| | | | | | | (_| | | | |
 |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
-                    __/ |                      
+                    __/ |
                    |___/    '''
 
 
@@ -1060,7 +1060,7 @@ while not end_of_game:
 
 # ----Day8----------------
 # -----函數--
-
+# %%
 def greet(a, b, c):
 
     print("hello")
@@ -1098,7 +1098,55 @@ prime_check(number=o)
 
 
 # %%
+
+
+# %%
+
 # Caesar Cipher
 
+key = True
+
+while key:
+
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+                'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+                'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+    direction = input(
+        "Type 'encode'  to encrypt, type 'decode' to decrypt(make sure your word correct!!!): \n")
+    text = input("Type your message: \n").lower()
+    shift = int(input("Type the shift number(1~26): \n"))
+
+    def caesar(start_text, shift_amount, cipher_direction):
+        end_text = ""
+        shift_amount = shift_amount % 26
+        if cipher_direction == "decode":
+            shift_amount *= -1
+        for char in start_text:
+            if char in alphabet:
+                position = alphabet.index(char)
+                new_position = position + shift_amount
+                end_text += alphabet[new_position]
+            else:
+                end_text += char
+        print(f"Here is the {direction}d result: {end_text}")
+
+    caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
+
+    ww = input("Want to play again ? (please answer  'yes' or 'no')")
+    if (ww == "yes") | (ww == "YES") | (ww == "Yes"):
+        key = True
+    elif (ww == "no") | (ww == "NO") | (ww == "No"):
+        key = False
+        print("Bye.\n")
+
+print("Bye!")
+
+
+# %%
+# Day 9  Dictionary & Nesting
+
+# %%
+print("1\n")
 
 # %%
