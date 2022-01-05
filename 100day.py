@@ -1147,6 +1147,98 @@ print("Bye!")
 # Day 9  Dictionary & Nesting
 
 # %%
-print("1\n")
+
+program = {
+    "bug": "I'm a bug",
+    "function": "I'm a function",
+    "loop": "I'm a loop"
+}
+
+for keyy in program:
+    print(keyy)
+    print(program[keyy]+"\n")
+
 
 # %%
+
+
+# Grading Program
+
+student_scores = {
+    "Harry": 81,
+    "Ron": 78,
+    "Hermione": 99,
+    "Draco": 74,
+    "Neville": 62
+}
+
+
+student_grades = {}
+
+for j in student_scores:
+    score = student_scores[j]
+    if score > 90:
+        student_grades[j] = "Outstanding"
+    elif score > 80:
+        student_grades[j] = "Exceeds Expectations"
+    elif score > 70:
+        student_grades[j] = "Acceptable"
+    else:
+        student_grades[j] = "Bye!!!!!!!!!!!"
+
+
+print(student_grades)
+
+# %
+# %%
+
+# Nesting
+
+capitals = {
+    "France": "Paris",
+    "Germany": "Berlin",
+}
+
+travel_log = [
+    {
+        "country": "France",
+        "cities_visited": ["Paris", "Lille", "Dijon"],
+        "total_visited": 12,
+    },
+    {
+        "country": "Germany",
+        "cities_visited": ["Berlin", "Hamburg", "Stuttgart"],
+        "total_visited": 55,
+    },
+]
+
+
+def add_new_country(country_visited, times_visited, cities_visited):
+    new_country = {}
+    new_country["country"] = country_visited
+    new_country["cities_visited"] = cities_visited
+    new_country["total_visited"] = times_visited
+    travel_log.append(new_country)
+
+
+add_new_country("Russian", 2, ["Moscow", "Saint Petersburg"])
+print(travel_log)
+
+
+# %%
+# Q&A
+dict44 = {
+    "a": 1,
+    "b": 2,
+    "c": 3,
+
+}
+
+dict44[1] = 7
+
+
+print(dict44)
+
+for k in dict44:
+    dict44[k] += 1
+    print(dict44[k])
