@@ -1,8 +1,10 @@
 # %%
-import numpy as np
-import numpy as np
 from pathlib import Path
+
+import numpy as np
+
 import django
+
 while True:
     pw = 1234
     if pw == 1234:
@@ -42,12 +44,12 @@ print(squares)
 print([i**2 for i in range(10)])
 # %%
 
-# import django
+import django
 django.__version__
 
 # %%
-#from pathlib import Path
 
+from pathlib import Path
 Path('spam')/'bacon'/'eggs'
 
 # 一樣
@@ -60,12 +62,41 @@ Path.home()  # 家目錄
 # %%
 x, y = True, False
 
-print(not x and y or x)
+print(not x and y or x) # and >>or
 
 # %%
+
+import numpy as np
 a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 
 indices = np.array(
     [[False, False, True], [False, False, False], [True, True, False]])
 
 print(a[indices])
+
+#%%
+
+y1 = "                      This is lazy\t\n         "
+print(y1.strip())
+print("smartphone".startswith("smart"))
+print("smartphone".endswith("phone"))
+print("another".find("other"))
+print("cheat".replace("ch","m"))
+print(','.join(["F","B","I"]))
+print("ear" in "earth")
+
+def f():
+    x = 2
+    return x
+
+def g():
+    y =3
+
+print(f() is None )
+print(g() is None)
+print("" == None) 
+print(0 == None )
+
+r = t = 3
+print(r is t )
+print([3] is [3]) # 在記憶體不同位置
