@@ -6,9 +6,10 @@
 
 # 集合的 pop()
 
+from replit import clear
 import numpy as np
 from timeit import default_timer as timer
-from replit import clear
+
 import random as r
 import random as rad
 import random
@@ -1247,10 +1248,57 @@ for k in dict44:
 
 
 # %%
+bids = {}
+bid__finished = False
 
+
+def find11(bidding):
+    highest_bid = 0
+    winner = ""
+    for bidder in bidding:
+        bid_amount = bidding[bidder]
+        if bid_amount > highest_bid:
+            highest_bid = bid_amount
+            winner = bidder
+    print(f"winner is {winner} with a bid of ${highest_bid}")
+
+
+while not bid__finished:
+    a = input("your name: ")
+    b = int(input("Bid price? $ "))
+
+    bids[a] = b
+    continue00 = input("Are there any other bidders? Type 'yes' or 'no'")
+    if continue00 == "no":
+        bid__finished = True
+        find11(bids)
+    elif continue00 == "yes":
+        clear()
+
+# %%
+# %%
+
+# _____________________DAY__10____________________
+# function WITH output
+# %%
+# %%
+# %%
+# %%
+# %%
 
 # %%
 
+# %%
+
+# %%
+
+# %%
+
+# %%
+# %%
+
+# %%
+print("-------------------------------------------------------")
 # %%
 # 微  學 習  array
 # Example 1 : NumPy Array性能測試
