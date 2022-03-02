@@ -1294,6 +1294,8 @@ def format_name(f_name, l_name):
 
 print(format_name(input("your first name?"), input("your last name?")))
 # %%
+
+
 def is_leap(year):
     if year % 4 == 0:
         if year % 100 == 0:
@@ -1310,18 +1312,19 @@ def is_leap(year):
         print("Not leap year")
         return True
 
-def days_in_month(year, month):
-    month_days_01 = [31,28,31,30,31,30,31,31,30,31,30,31]
-    month_days_02 = [31,29,31,30,31,30,31,31,30,31,30,31]
+
+def days_in_months(year, month):
+    month_days_01 = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    month_days_02 = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     if is_leap(year) == True:
         return month_days_01[month-1]
     else:
         return month_days_02[month-1]
-    
+
 
 year = int(input("Enter year: "))
 month = int(input("Enter month: "))
-days = days_in_month(year,month)
+days = days_in_months(year, month)
 print(days)
 # %%
 # %%
