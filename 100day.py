@@ -1326,12 +1326,59 @@ year = int(input("Enter year: "))
 month = int(input("Enter month: "))
 days = days_in_months(year, month)
 print(days)
-# %%
-# %%
-# %%
 
 # %%
+# Docstrings
+# """ 文檔字串"""
 
+
+# %%
+def my(a):
+    if a < 40:
+        return
+        print("TT")
+    if a < 80:
+        return "pass"
+    else:
+        return "Great"
+
+
+print(my(25))
+# %%
+# calculator
+key1 = True
+while key1:
+
+    a = float(input("Enter your first number: "))
+    print("+\n - \n *\n / \n")
+    b = input("Pick an operation:")
+    c = float(input("Enter your second number: "))
+    d = ["+", "-", "*", "/"]
+
+    def calculate(a, b, c, d):
+        if b == d[0]:
+            return a+c
+        elif b == d[1]:
+            return a-c
+        elif b == d[2]:
+            return a*c
+        elif b == d[3]:
+            return a/c
+
+    answers = calculate(a, b, c, d)
+    print(f"{a} {b} {c} = {answers}")
+
+    key = input(
+        f"Type 'y'  to continue calculating with{answers} , or type 'n'to start a new calculation:")
+    if (key == 'y' or key == 'Y'):
+        key1 = True
+    elif (key == 'n' or key == 'N'):
+        key1 = False
+
+
+# %%
+# day 11
+# -
 # %%
 
 # %%
