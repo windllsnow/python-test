@@ -1374,12 +1374,60 @@ while key1:
         key1 = True
     elif (key == 'n' or key == 'N'):
         key1 = False
+#%%
+
+
+
+def add (n1,n2):
+    return n1+n2
+def sub (n1,n2):
+    return n1-n2
+def mul (n1,n2):
+    return n1*n2
+def div (n1,n2):
+    return n1/n2
+
+
+operation = {
+    "+" : add,
+    "-" : sub,
+    "*" : mul,
+    "/" : div 
+}
+
+num1 = int(input("first number: "))
+
+
+for symbol in operation:
+    print(symbol)
+
+should_continue = True
+while should_continue:
+    operation_symbol = input ("Pick an operation:(+,-,*,/)")
+
+    num2 = int(input("second number: "))
+
+    calculation_function = operation[operation_symbol]
+    answer = calculation_function(num1,num2)
+
+
+    print(f"{num1} {operation_symbol}{num2} = {answer}")
+
+    if input(f"Type 'y' to continue calculating with {answer} or type 'n' to exit") == "y":
+        num1 = answer
+    else:
+        should_continue = False
+
+
+
+
 
 
 # %%
 # day 11
-# -
+# 
 # %%
+
 
 # %%
 
