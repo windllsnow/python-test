@@ -1429,19 +1429,49 @@ calculator()
 
 # %%
 # day 11
-# blackjack capstone Project
+# blackjack capstone Project  難
 ##
 # %%
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+# cards  還沒用
 
 
+def aa():
+
+    n1 = random.randint(1, 11)
+    n2 = random.randint(1, 11)
+    return [n1, n2]
 
 
+player1 = aa()
+player2 = aa()
+print(player1)
+print(player2)
+
+# 確認 不能 重複4色 ，52 張????how?
+# ace = 1 & 11
 
 
+p1_add = player1[0]+player1[1]
+p2_add = player2[0]+player2[1]
+
+# while  加牌
 
 
+def cal_01(p1_add, p2_add):
+    if p1_add > 21:
+        return f"p2 get {p2_add} __p2 win."
+    elif p2_add > 21:
+        return f"p1 get {p1_add} __p1 win."
+    elif p1_add > p2_add:
+        return f"p1 get {p1_add} __p1 win."
+    elif p2_add > p1_add:
+        return f"p2 get {p2_add} __p2 win."
 
 
+answer_001 = cal_01(p1_add, p2_add)
+print(answer_001)
 # %%
 
 # %%

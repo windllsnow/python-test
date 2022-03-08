@@ -6,6 +6,7 @@ import random as rm
 a = rm.random()
 print(a)
 
+
 print(123)
 
 
@@ -14,3 +15,4 @@ print(123)
 
 
 
+#%%
