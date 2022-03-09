@@ -1432,20 +1432,21 @@ calculator()
 # blackjack capstone Project  難
 ##
 # %%
+import random
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 # cards  還沒用
 
 
-def aa():
+def a1():
 
     n1 = random.randint(1, 11)
     n2 = random.randint(1, 11)
     return [n1, n2]
 
 
-player1 = aa()
-player2 = aa()
+player1 = a1()
+player2 = a1()
 print(player1)
 print(player2)
 
