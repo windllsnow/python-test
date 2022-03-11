@@ -1432,7 +1432,8 @@ calculator()
 # blackjack capstone Project  難
 ##
 # %%
-import random
+
+
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 # cards  還沒用
@@ -1469,10 +1470,14 @@ def cal_01(p1_add, p2_add):
         return f"p1 get {p1_add} __p1 win."
     elif p2_add > p1_add:
         return f"p2 get {p2_add} __p2 win."
+    elif p2_add == p1_add:
+        return f"p1 = p2  is {p1_add} = {p2_add}"
 
 
 answer_001 = cal_01(p1_add, p2_add)
 print(answer_001)
+
+
 # %%
 
 # %%
