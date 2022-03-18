@@ -1481,7 +1481,9 @@ print(answer_001)
 # %%
 
 #~~~~~~~~~難到爆~~~
+
 import random
+from replit import clear
 def deal_card():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     card = random.choice(cards)
@@ -1508,48 +1510,59 @@ def compare(user_score, computer_score):
         return "you win"
     else:
         return "you lose"
-user_cards = []
-computer_cards =[]
-is_game_over = False
 
-for _ in range(2):
-    user_cards.append(deal_card())
-    computer_cards.append(deal_card())
 
-while not is_game_over:
-    user_score = calculate_score(user_cards)
-    computer_score = calculate_score(computer_cards)
 
-    print(f" your cards: {user_cards},current score :{user_score}")
-    print(f"Computer's first card: {computer_cards[0]}")
+def play_game():
+    user_cards = []
+    computer_cards =[]
+    is_game_over = False
 
-    if user_score == 0 or computer_score == 0 or  user_score > 21:
-        is_game_over = True
+    for _ in range(2):
+        user_cards.append(deal_card())
+        computer_cards.append(deal_card())
 
-    else:
-        user_should_deal =  input("type 'y' to get another card, type 'n' to pass")
-        if user_should_deal == 'y':
-            user_cards.append(deal_card())
+    while not is_game_over:
+        user_score = calculate_score(user_cards)
+        computer_score = calculate_score(computer_cards)
+
+        print(f" your cards: {user_cards},current score :{user_score}")
+        print(f"Computer's first card: {computer_cards[0]}")
+
+        if user_score == 0 or computer_score == 0 or  user_score > 21:
+            is_game_over = True
+
         else:
-            is_game_over =True
+            user_should_deal =  input("type 'y' to get another card, type 'n' to pass")
+            if user_should_deal == 'y':
+                user_cards.append(deal_card())
+            else:
+                is_game_over =True
 
 
-while computer_score != 0 and computer_score < 17 :
-    computer_cards.append(deal_card())
-    computer_score = calculate_score(computer_cards)
+    while computer_score != 0 and computer_score < 17 :
+        computer_cards.append(deal_card())
 
+        computer_score = calculate_score(computer_cards)
 
-
-
+    print(f"your final hand:{user_cards},final score :{user_score}")
+    print(f"computer final card: {computer_cards},final score :{computer_score}")
+    print(compare(user_score,computer_score))
+while input("Do you want to play a game of Blackjack? type'y' or 'n' ") == "y":
+    clear()
+    play_game()
+# %%
+#____________________day 12__________________________________
 
 # %%
+print()
 
-# %%
 # %%
 
 # %%
 print("-------------------------------------------------------")
 # %%
+
 # 微  學 習  array
 # Example 1 : NumPy Array性能測試
 
