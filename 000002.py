@@ -47,3 +47,38 @@ print([x.lower() for x in ['I','AM','NOT','SHOUTING']])
 
 
 #%%
+#lambda 參數 : return 表達式
+
+lambda x,y : x+y
+
+txt1= ['lambda functions are anonymous functions.',
+        'anonymous function dont  have a name.',
+        'functions are objects in Python.']
+mark = map (lambda s : ( True, s) if 'anonymous' in s else (False, s), txt1)
+
+print(list(mark))
+#%%
+
+text = '''
+Call me Ishmael. Some years ago - never mind how long precisely - having little or no money in my purse, and nothing particular to interest me on shore , I thought I would sail about a little and see the watery part of  the world . It is a way I have of driving off the  spleen , and regulating the circulation. - Moby Dick'''
+
+w =[[x for x in line.split() if len (x)>3] for line in text.split('\n')]
+print(w)
+#%%
+#x[start:stop:step]
+
+ss = 'Eat more fruits!'
+print(ss[0:3])
+
+print(ss[3:])
+print(ss[4:8:2])
+print(ss[::-1])
+print(ss[6:1:-1])
+
+
+#%%
+
+
+
+# %%
+
