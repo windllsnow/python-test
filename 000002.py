@@ -1,4 +1,7 @@
 #%%
+
+# Python 不廢話一行程式碼
+
 false_values = [
     False,
     [],
@@ -71,6 +74,8 @@ ss = 'Eat more fruits!'
 print(ss[0:3])
 
 print(ss[3:])
+
+
 print(ss[4:8:2])
 print(ss[::-1])
 print(ss[6:1:-1])
