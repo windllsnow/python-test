@@ -1,22 +1,27 @@
+# %%
+#
+#
+#
+# 駭客密碼
+#
+#
+#
+
+# %%----------------------------------------------------------------
+print('123')
 #%%
+# %%
 
-print('124')
-
-
-#%%----------------------------------------------------------------
-
-
-#%%
-
-#密碼
+# 密碼
 
 import pyperclip
+
 
 message = 'This is my secret messagell11.'
 key = 13
 mode = 'encrypt'
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
-translated =''
+translated = ''
 
 for symbol in message:
     if symbol in SYMBOLS:
@@ -25,23 +30,17 @@ for symbol in message:
             translatedIndex = symbolIndex + key
         elif mode == 'decrypt':
             translatedIndex = symbolIndex - key
-        
 
         if translatedIndex >= len(SYMBOLS):
             translatedIndex = translatedIndex - len(SYMBOLS)
         elif translatedIndex < 0:
             translatedIndex = translatedIndex + len(SYMBOLS)
-        
-        translated = translated +SYMBOLS[translatedIndex]
+
+        translated = translated + SYMBOLS[translatedIndex]
     else:
         translated = translated + symbol
 
 print(translated)
 pyperclip.copy(translated)
 
-#%%
-
-
-
-
-
+# %%
