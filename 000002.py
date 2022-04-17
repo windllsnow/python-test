@@ -1,7 +1,11 @@
 #%%
-
+#
 # Python 不廢話一行程式碼
-
+#
+#
+#
+#
+#%%
 false_values = [
     False,
     [],
