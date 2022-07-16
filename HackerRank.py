@@ -17,14 +17,16 @@ print(123)
 
 # %%
 
-n = int(input())
+n = int(input("輸入幾個數"))
 a = 0
-
+print("大於 5 的數 有\t")
 for i in range(n):
+
+    a = int(input("數字:"))
     
-    a = int(input())
     if a > 5:
-        print(a, ",", end="")
+        
+        print(f"{a},", end="")
 
 
 # %%
@@ -90,18 +92,35 @@ extend 是取出 object 的所有 element/iterator 扔進list 裡面，
 # %%
 
 
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+
+    kk = []
+
+    for i in range(x+1):
+        for j in range(y+1):
+            for k in range(z+1):
+                kk.append([i, j, k]) 
+                if i+j+k == n:
+                    kk.pop()
+                    
+                    
+                else:
+                    pass
+
+    print(kk)
+    
+    #    確認append 裡 用原本的型態
+    #   用迴圈 ，所以遇到時，必為最後一個，pop刪掉
+    #    要最後結果不用過程，出迴圈在print        
 
 
 
+#%%
 
 
 
-
-
-
-
-
-
-
-
-# %%
+#%%
