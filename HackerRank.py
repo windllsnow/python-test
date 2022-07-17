@@ -22,10 +22,14 @@ a = 0
 print("大於 5 的數 有\t")
 for i in range(n):
 
+
+
+
+
     a = int(input("數字:"))
-    
+
     if a > 5:
-        
+
         print(f"{a},", end="")
 
 
@@ -103,24 +107,29 @@ if __name__ == '__main__':
     for i in range(x+1):
         for j in range(y+1):
             for k in range(z+1):
-                kk.append([i, j, k]) 
+                kk.append([i, j, k])
                 if i+j+k == n:
                     kk.pop()
-                    
-                    
+
                 else:
                     pass
 
     print(kk)
-    
+
     #    確認append 裡 用原本的型態
     #   用迴圈 ，所以遇到時，必為最後一個，pop刪掉
-    #    要最後結果不用過程，出迴圈在print        
+    #    要最後結果不用過程，出迴圈在print
 
 
+# %%
+'''
+取n 數 input
+k=0 while  K++  K=n 跳出
+t=[]
+input 加元素進去
+sort sorted 由大到小排列
+取索引值 第二個 i=1(0->1)
+print 出來
+'''
 
-#%%
-
-
-
-#%%
+# %%
