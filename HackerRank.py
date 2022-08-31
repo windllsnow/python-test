@@ -22,10 +22,6 @@ a = 0
 print("大於 5 的數 有\t")
 for i in range(n):
 
-
-
-
-
     a = int(input("數字:"))
 
     if a > 5:
@@ -110,10 +106,8 @@ if __name__ == '__main__':
                 kk.append([i, j, k])
                 if i+j+k == n:
                     kk.pop()
-
                 else:
                     pass
-
     print(kk)
 
     #    確認append 裡 用原本的型態
@@ -122,14 +116,64 @@ if __name__ == '__main__':
 
 
 # %%
-'''
-取n 數 input
-k=0 while  K++  K=n 跳出
-t=[]
-input 加元素進去
-sort sorted 由大到小排列
-取索引值 第二個 i=1(0->1)
-print 出來
-'''
+'''.
+if __name__ == '__main__':
+
+    n = int(input("How many players?(2~10)"))
+    arr = map(int, input("score?").split())
+
+    arr1 = list(arr) # list
+    arr2 = sorted(arr1)#由小到大
+    arr3 = list(filter(lambda x:x<=100 and x>=-100, arr2))#設範圍
+    
+..........'''
+
+#
+# 
+
+if __name__ == '__main__':
+    
+    n = int(input())
+    arr = map(int, input().split())
+
+    arr2 = sorted(list(arr))
+
+    number1 = len(arr2)
+
+    k = True
+    while k:
+        if n>=2 and n<= 10:
+            if number1 == n:
+                if arr2[-1] != arr2[-2]:
+                    b1=arr2[-2]
+                    print(b1)
+                    k= False
+                elif arr2[-1]==arr2[-2]:
+                    haha=[]
+                    for j in sorted(set(arr2)):
+                        haha.append(j)
+                    print(haha)
+                    b22=haha[-2]
+                    b33=haha[0]
+                    if len(haha)>2:
+
+                        print(b22)
+                        k=False
+                        continue
+                    elif len(haha)==2:
+                        print(b33)
+                        k=False
+                        continue
+                    else:
+                        continue
+
+                else:
+                    continue
+            else:
+                print("wrong")
+        else:
+            
+            print("wrong")
+
 
 # %%
