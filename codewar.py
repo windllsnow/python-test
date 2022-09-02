@@ -1,4 +1,8 @@
 #%%
+from dataclasses import dataclass
+import re
+
+
 x =int(input("Input number: "))
 if type(x) != int:
     print("Error")
@@ -35,8 +39,21 @@ square_sum([1, 2, 3, 4, 5])
 
 #%%
 
+def square_digits(num):
+    pass
+    a=str(num)
+    
+    b=list(a)
+    b = list(map(int, b))
+    b1 = list(map(lambda x:x**2, b))
+    b2 = list(map(str, b1))
+    c =''.join(b2)
+    d= int(c)
+    
+    return d
 
 
+square_digits(0)
 
 #%% 
 
