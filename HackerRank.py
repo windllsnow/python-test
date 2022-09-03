@@ -177,3 +177,47 @@ if __name__ == '__main__':
 
 
 # %%
+
+#NESTED LISTED
+if __name__ == '__main__':
+    
+    
+
+
+
+    for _ in range(int(input())):
+        name1 = input()
+        score = float(input())
+        # r={"name1",score}
+        s3 = dict(dict(zip([name1], [score])))
+        print(s3)
+        print("-----========--")
+
+        # dictionary = {'a': 'Apple', 'b': 'Banana', 'c': 'Cherries', 'd': 'Dragon Fruit'}
+
+        r1 = s3.values()
+        print("Type of variable r1 is: ", type(r1))
+
+        r1 = list(r1)
+        r2=list(map(int, r1))
+        print(r2)
+
+        print("Type of variable r is: ", type(r2))
+
+
+"""
+1 for _    後面不能取長度 跑for 或 跑while
+2 字典  不能 取出來 /遍歷/比大小/合併成 其他資料型態
+3 有函式 可取最大值 但 倒數第二呢?
+
+"""
+
+
+
+
+
+
+#%%
+
+
+
