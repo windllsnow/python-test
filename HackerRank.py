@@ -179,30 +179,30 @@ if __name__ == '__main__':
 # %%
 
 #NESTED LISTED
-if __name__ == '__main__':
+# if __name__ == '__main__':
     
     
 
 
 
-    for _ in range(int(input())):
-        name1 = input()
-        score = float(input())
-        # r={"name1",score}
-        s3 = dict(dict(zip([name1], [score])))
-        print(s3)
-        print("-----========--")
+    # for _ in range(int(input())):
+    #     name1 = input()
+    #     score = float(input())
+    #     # r={"name1",score}
+    #     s3 = dict(dict(zip([name1], [score])))
+    #     print(s3)
+    #     print("-----========--")
 
-        # dictionary = {'a': 'Apple', 'b': 'Banana', 'c': 'Cherries', 'd': 'Dragon Fruit'}
+    #     # dictionary = {'a': 'Apple', 'b': 'Banana', 'c': 'Cherries', 'd': 'Dragon Fruit'}
 
-        r1 = s3.values()
-        print("Type of variable r1 is: ", type(r1))
+    #     r1 = s3.values()
+    #     print("Type of variable r1 is: ", type(r1))
 
-        r1 = list(r1)
-        r2=list(map(int, r1))
-        print(r2)
+    #     r1 = list(r1)
+    #     r2=list(map(int, r1))
+    #     print(r2)
 
-        print("Type of variable r is: ", type(r2))
+    #     print("Type of variable r is: ", type(r2))
 
 
 """
