@@ -53,7 +53,7 @@ def square_digits(num):
     return d
 
 
-square_digits(11112)
+square_digits(11111132)
 
 #%% 
 
