@@ -233,7 +233,7 @@ list
 a1=[]
 
 for i in range():
-    a1[i] 
+    a1[i] =
 
 
 
