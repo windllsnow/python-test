@@ -205,23 +205,63 @@ if __name__ == '__main__':
     #     print("Type of variable r is: ", type(r2))
 
 
-"""
-1 for _    後面不能取長度 跑for 或 跑while
-2 字典  不能 取出來 /遍歷/比大小/合併成 其他資料型態
-3 有函式 可取最大值 但 倒數第二呢?
------
 
-list
 
-1__
-2迴圈  N?  指針  ?條件式?
-3合併list  取2
-4合併  排序 比大小
-5 第2小
-6回抓  +print 名字
 
-"""
+#%%
+if __name__ =='__main__':
 
+    kk=[]
+
+    n = int(input())
+    for _ in range(n):
+        name = input()
+        score = float(input())
+        s3 = dict(dict(zip([name], [score])))
+        print(s3)
+        print("-----========--")
+
+        # dictionary = {'a': 'Apple', 'b': 'Banana', 'c': 'Cherries', 'd': 'Dragon Fruit'}
+
+        r1 = s3.values()
+        # print("Type of variable r1 is: ", type(r1))
+        
+        r1 = list(r1)
+        
+        r2=list(map(int, r1))
+        print(r2)
+        kk.append(r2)
+        print("---+++++++-")
+
+    print(kk)
+        # print("Type of variable r is: ", type(r2))
+    s =[]
+    for j in range (n):
+
+        s.append(kk[j][0])
+        
+    print(s)
+    s111= sorted(s,reverse=True)
+    print(s111)
+
+    max_s111 = max(s111)
+
+    print(max_s111)
+
+
+    
+    s111 = [value for value in s111 if value != max_s111]
+    print(s111)
+
+    s2_max = max(s111)
+    print (s2_max) #抓第2大
+
+
+
+
+
+
+'''回推原本 植 名字  ，然後  output 字典 那些項'''
 
 
 
@@ -230,12 +270,69 @@ list
 #%%
 
 
-a1=[]
-
-for i in range():
-    a1[i] =
 
 
 
 #%%
+    # 找出陣列中第2大值
+    
+    # two = []
+    # for i in range(len(s111)):
+    #     if s111[i] == max_s111:
+    #         continue
+    #     elif s111[i] < max_s111:
+    #         two = s111[i]
+    #         three =[]
+    #         max_two = max(two)
+    #         for j in range(len(two)):
+                
+    #             if two[j] == max_two:
+    #                 continue
+    #             elif two[j] < max_two:
+    #                 three = two[j]
+    #             else:
+    #                 pass
+    #     else:
+    #         pass
+    # print(two)
+    # print(three)
+        
 
+    
+
+
+
+
+
+            
+
+#%%
+
+
+
+# n = int(input())
+
+# for _ in range(n):
+#     d = int(input())
+#     m = int(input())
+#     c = [0] * m
+    
+#     # for i in range(m):
+#         c[i] = int(input())
+    
+#     #模擬罷會
+#     total = 0
+#     for i in range(1, d+1):
+#         #跳過星期五星期六
+#         if i % 7 == 6 or i % 7 == 0:
+#             continue
+        
+#         #只要一個罷會就加一
+#         for j in range(m):
+#             if i % c[j] == 0:
+#                 total += 1
+#                 break
+        
+#     print(total)
+
+#%%
